@@ -1,0 +1,9 @@
+.next
+.umi
+.umi-production
+build
+dist
+node_modules
+out
+public
+volumes

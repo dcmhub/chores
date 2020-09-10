@@ -53,11 +53,11 @@
     "eslint:fix": "yarn run eslint --fix",
     "lint": "run-s stylelint eslint prettier check:types check:size",
     "lint:fix": "run-s stylelint:fix eslint:fix prettier:fix",
-    "prettier": "prettier --check \"**/*.{json,js,jsx,ts,tsx,md,mdx,css,scss,less}\"",
-    "prettier:fix": "prettier --write \"**/*.{json,js,jsx,ts,tsx,md,mdx,css,scss,less}\"",
+    "prettier": "prettier --check \"**/*.{json,js,jsx,ts,tsx,css,scss,less,wxss,html,vue,md,mdx}\"",
+    "prettier:fix": "prettier --write \"**/*.{json,js,jsx,ts,tsx,css,scss,less,wxss,html,vue,md,mdx}\"",
     "release": "lerna publish from-package",
     "start": "lerna run start",
-    "stylelint": "stylelint --cache --aei \"**/*.{css,scss,less}\"",
+    "stylelint": "stylelint --cache --aei \"**/*.{css,scss,less,wxss,html,vue}\"",
     "stylelint:fix": "yarn run stylelint --fix",
     "test": "lerna run test"
   },
@@ -73,9 +73,9 @@
     ]
   },
   "lint-staged": {
-    "**/*.{css,scss,less}": "yarn run stylelint",
+    "**/*.{css,scss,less,wxss,html,vue}": "yarn run stylelint",
     "**/*.{js,jsx,ts,tsx,md,mdx}": "yarn run eslint",
-    "**/*.{json,js,jsx,ts,tsx,md,mdx,css,scss,less}": "pretty-quick --staged"
+    "**/*.{json,js,jsx,ts,tsx,css,scss,less,wxss,html,vue,md,mdx}": "pretty-quick --staged"
   },
   "config": {
     "commitizen": {

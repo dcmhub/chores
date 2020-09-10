@@ -1,0 +1,60 @@
+{
+  "name": "@dcm/stylelint-config",
+  "version": "2.0.1",
+  "private": false,
+  "description": "Shareable @stylelint config of @dcmhub.",
+  "keywords": [
+    "dcmhub",
+    "linter",
+    "stylelint",
+    "stylelint-config"
+  ],
+  "homepage": "https://npm.im/@dcm/stylelint-config",
+  "bugs": {
+    "url": "https://github.com/dcmhub/chores/issues",
+    "email": "hello@dcmhub.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcmhub/chores",
+    "directory": "packages/stylelint-conifg"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "DcmHub Inc.",
+    "email": "hello@dcmhub.com",
+    "url": "https://dcmhub.com"
+  },
+  "contributors": [
+    {
+      "name": "Ritchie Zhu",
+      "email": "laozhu.me@gmail.com",
+      "url": "https://laozhu.me"
+    }
+  ],
+  "main": "index.js",
+  "files": [
+    "concentric-order.js",
+    "css-modules.js",
+    "index.js"
+  ],
+  "dependencies": {
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-no-unsupported-browser-features": "^4.0.0",
+    "stylelint-order": "^4.1.0"
+  },
+  "peerDependencies": {
+    "prettier": "^2.1.1",
+    "stylelint": "^13.7.0"
+  },
+  "engines": {
+    "node": ">=12.18.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  }
+}
