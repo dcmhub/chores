@@ -7,6 +7,7 @@ const postcssConfig = {
       features: {
         'blank-pseudo-class': true,
         'focus-within-pseudo-class': true,
+        'image-set-function': true,
         'matches-pseudo-class': true,
         'nesting-rules': true,
         'not-pseudo-class': true,
