@@ -1,0 +1,19 @@
+{
+  "extends": "@dcm/tsconfig",
+  "files": [],
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": [
+    ".next",
+    ".umi",
+    ".umi-production",
+    "build",
+    "dist",
+    "node_modules",
+    "out",
+    "public",
+    "scripts"
+  ],
+  "compilerOptions": {
+    "types": ["express", "node", "react", "react-dom", "webpack-env"]
+  }
+}

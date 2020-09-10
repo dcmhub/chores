@@ -1,0 +1,55 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# editor
+.idea
+.vscode
+[._]*.un~
+[._]sw[a-p]
+[._]*.sw[a-p]
+
+# dependencies
+.pnp*
+node_modules
+
+# production
+.next
+.umi
+.umi-production
+build
+dist
+out
+
+# caches
+.yarn
+.DS_Store
+.changelog
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+report.*.json
+*.cpuprofile
+
+# lock files
+yarn.lock
+package-lock.json
+
+# testing
+coverage
+
+# git
+!.gitkeep
+
+# envs
+.env*
+!.env.example
+
+# docker
+volumes
+
+# misc

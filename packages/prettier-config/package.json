@@ -1,0 +1,51 @@
+{
+  "name": "@dcm/prettier-config",
+  "version": "2.0.1",
+  "private": false,
+  "description": "Shareable @prettier config of @dcmhub.",
+  "keywords": [
+    "dcmhub",
+    "formatter",
+    "prettier",
+    "prettier-config"
+  ],
+  "homepage": "https://npm.im/@dcm/prettier-config",
+  "bugs": {
+    "url": "https://github.com/dcmhub/chores/issues",
+    "email": "hello@dcmhub.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcmhub/chores",
+    "directory": "packages/prettier-config"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "DcmHub Inc.",
+    "email": "hello@dcmhub.com",
+    "url": "https://dcmhub.com"
+  },
+  "contributors": [
+    {
+      "name": "Ritchie Zhu",
+      "email": "laozhu.me@gmail.com",
+      "url": "https://laozhu.me"
+    }
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "prettier": "^2.1.1"
+  },
+  "engines": {
+    "node": ">=12.18.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  }
+}

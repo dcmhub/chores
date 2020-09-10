@@ -1,0 +1,47 @@
+{
+  "name": "@dcm/tsconfig",
+  "version": "2.0.1",
+  "private": false,
+  "description": "Shareable tsconfig.json file of @dcmhub.",
+  "keywords": [
+    "dcmhub",
+    "tsconfig",
+    "typescript"
+  ],
+  "homepage": "https://npm.im/@dcm/tsconfig",
+  "bugs": {
+    "url": "https://github.com/dcmhub/chores/issues",
+    "email": "hello@dcmhub.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcmhub/chores",
+    "directory": "packages/tsconfig"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "DcmHub Inc.",
+    "email": "hello@dcmhub.com",
+    "url": "https://dcmhub.com"
+  },
+  "contributors": [
+    {
+      "name": "Ritchie Zhu",
+      "email": "laozhu.me@gmail.com",
+      "url": "https://laozhu.me"
+    }
+  ],
+  "main": "tsconfig.json",
+  "files": [
+    "tsconfig.json"
+  ],
+  "dependencies": {},
+  "engines": {
+    "node": ">=12.18.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  }
+}

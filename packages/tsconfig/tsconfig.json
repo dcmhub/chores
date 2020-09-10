@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // Project Options
+    "allowJs": false,
+    "checkJs": false,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "downlevelIteration": false,
+    "importHelpers": false,
+    "incremental": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["ESNext", "DOM"],
+    "module": "ESNext",
+    "noEmit": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "ESNext",
+
+    // Strict Checks
+    "strict": true,
+    "alwaysStrict": false,
+
+    // Module Resolution
+    "allowUmdGlobalAccess": false,
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "preserveSymlinks": false,
+
+    // Source Maps
+    "inlineSourceMap": false,
+    "inlineSources": false,
+
+    // Linter Checks
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    // Experimental
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true,
+
+    // Advanced
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "assumeChangesOnlyAffectDirectDependencies": true,
+    "diagnostics": false,
+    "disableReferencedProjectLoad": false,
+    "disableSizeLimit": false,
+    "disableSolutionSearching": false,
+    "disableSourceOfProjectReferenceRedirect": false,
+    "emitBOM": false,
+    "extendedDiagnostics": false,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "remove",
+    "listEmittedFiles": false,
+    "listFiles": false,
+    "maxNodeModuleJsDepth": 0,
+    "newLine": "LF",
+    "noEmitHelpers": false,
+    "noEmitOnError": true,
+    "noImplicitUseStrict": true,
+    "noLib": false,
+    "noResolve": false,
+    "noStrictGenericChecks": false,
+    "preserveConstEnums": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "suppressExcessPropertyErrors": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "traceResolution": false,
+    "useDefineForClassFields": true,
+
+    // Command Line
+    "preserveWatchOutput": false,
+    "pretty": true
+  }
+}
