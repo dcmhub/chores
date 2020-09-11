@@ -52,9 +52,28 @@ const eslintConfig = {
     serviceworker: true,
   },
 
+  globals: {
+    // Global variables for wechat miniprogram
+    wx: true,
+    App: true,
+    Behavior: true,
+    Component: true,
+    Function: true,
+    Page: true,
+    Promise: true,
+    getApp: true,
+    getCurrentPages: true,
+    definePlugin: true,
+    requirePlugin: true,
+
+    // Global variables for react app
+    REACT_APP_ENV: true,
+  },
+
   rules: {
     'no-bitwise': 'off',
     'no-console': 'warn',
+    'no-empty-function': 'off',
     'no-restricted-syntax': 'off',
     'no-param-reassign': [
       'error',
@@ -69,6 +88,24 @@ const eslintConfig = {
       {
         properties: 'never',
         ignoreDestructuring: true,
+      },
+    ],
+
+    // Unused variables rule
+    'no-unused-vars': [
+      'error',
+      {
+        args: 'after-used',
+        ignoreRestSiblings: true,
+        argsIgnorePattern: '^_',
+      },
+    ],
+
+    // Exceptions for wechat miniprogram
+    'new-cap': [
+      'error',
+      {
+        capIsNewExceptions: ['App', 'Page', 'Component', 'Behavior'],
       },
     ],
 
@@ -290,6 +327,36 @@ const eslintConfig = {
         'prettier/react',
         'prettier/unicorn',
       ],
+
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/no-empty-interface': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-namespace': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
+
+        // Ignore params for no inferrable types
+        '@typescript-eslint/no-inferrable-types': [
+          'error',
+          {
+            ignoreParameters: true,
+            ignoreProperties: true,
+          },
+        ],
+
+        // Allowed typescript version no-unused-vars
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': [
+          'error',
+          {
+            args: 'after-used',
+            ignoreRestSiblings: true,
+            argsIgnorePattern: '^_',
+          },
+        ],
+      },
 
       settings: {
         jsdoc: {
