@@ -12,13 +12,15 @@
 node_modules
 
 # production
+**/*.min.js
+**/*.min.css
 .next
 .umi
 .umi-production
 build
 dist
 out
-public
+!.umirc.js
 !.umirc.ts
 
 # caches

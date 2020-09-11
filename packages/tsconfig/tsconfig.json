@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json.schemastore.org/tsconfig",
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     // Project Options
     "allowJs": false,
@@ -10,7 +10,7 @@
     "downlevelIteration": false,
     "importHelpers": false,
     "incremental": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "jsx": "react",
     "lib": ["ESNext", "DOM"],
     "module": "ESNext",

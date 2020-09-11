@@ -1,18 +1,9 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@dcm/tsconfig",
   "files": [],
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": [
-    ".next",
-    ".umi",
-    ".umi-production",
-    "build",
-    "dist",
-    "node_modules",
-    "out",
-    "public",
-    "scripts"
-  ],
+  "exclude": [".next", ".umi", ".umi-production", "build", "dist", "node_modules", "out", "public"],
   "compilerOptions": {
     "types": ["express", "node", "react", "react-dom", "webpack-env"]
   }

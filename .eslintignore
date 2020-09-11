@@ -1,4 +1,4 @@
-**/*.min.css
+**/*.min.js
 .next
 .umi
 .umi-production

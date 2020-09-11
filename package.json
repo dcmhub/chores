@@ -49,15 +49,15 @@
     "commit": "git-cz",
     "commit:dirty": "yarn run commit --no-verify",
     "dev": "lerna run dev",
-    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx,.md,.mdx --format=pretty .",
+    "eslint": "eslint --cache --ext .js,.jsx,.mjs,.ts,.tsx,.html,.md,.mdx --format=pretty .",
     "eslint:fix": "yarn run eslint --fix",
     "lint": "run-s stylelint eslint prettier check:types check:size",
     "lint:fix": "run-s stylelint:fix eslint:fix prettier:fix",
-    "prettier": "prettier --check \"**/*.{json,js,jsx,ts,tsx,css,scss,less,wxss,html,vue,md,mdx}\"",
-    "prettier:fix": "prettier --write \"**/*.{json,js,jsx,ts,tsx,css,scss,less,wxss,html,vue,md,mdx}\"",
+    "prettier": "prettier --check \"**/*.{json,js,jsx,mjs,ts,tsx,css,scss,less,wxss,html,md,mdx}\"",
+    "prettier:fix": "prettier --write \"**/*.{json,js,jsx,mjs,ts,tsx,css,scss,less,wxss,html,md,mdx}\"",
     "release": "lerna publish from-package",
     "start": "lerna run start",
-    "stylelint": "stylelint --cache --aei \"**/*.{css,scss,less,wxss,html,vue}\"",
+    "stylelint": "stylelint --cache --aei \"**/*.{css,scss,less,wxss}\"",
     "stylelint:fix": "yarn run stylelint --fix",
     "test": "lerna run test"
   },
@@ -73,9 +73,9 @@
     ]
   },
   "lint-staged": {
-    "**/*.{css,scss,less,wxss,html,vue}": "yarn run stylelint",
-    "**/*.{js,jsx,ts,tsx,md,mdx}": "yarn run eslint",
-    "**/*.{json,js,jsx,ts,tsx,css,scss,less,wxss,html,vue,md,mdx}": "pretty-quick --staged"
+    "**/*.{css,scss,less,wxss}": "yarn run stylelint",
+    "**/*.{js,jsx,mjs,ts,tsx,html,md,mdx}": "yarn run eslint",
+    "**/*.{json,js,jsx,mjs,ts,tsx,css,scss,less,wxss,html,md,mdx}": "pretty-quick --staged"
   },
   "config": {
     "commitizen": {
@@ -100,6 +100,8 @@
   "prettier": "@dcm/prettier-config",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/eslint-parser": "^7.11.5",
     "@commitlint/cli": "^9.1.2",
     "@commitlint/prompt": "^9.1.2",
     "@types/express": "^4.17.8",
@@ -119,7 +121,7 @@
     "prettier": "^2.1.1",
     "prettier-plugin-organize-imports": "^1.1.1",
     "prettier-plugin-packagejson": "^2.2.5",
-    "pretty-quick": "^3.0.0",
+    "pretty-quick": "^3.0.2",
     "rimraf": "^3.0.2",
     "stylelint": "^13.7.0",
     "typescript": "^4.0.2"

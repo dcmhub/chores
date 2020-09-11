@@ -1,4 +1,4 @@
-module.exports = {
+const stylelintConfig = {
   defaultSeverity: 'error',
   extends: [
     'stylelint-config-standard',
@@ -40,3 +40,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = stylelintConfig;

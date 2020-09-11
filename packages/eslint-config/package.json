@@ -1,0 +1,78 @@
+{
+  "name": "@dcm/eslint-config",
+  "version": "2.0.1",
+  "private": false,
+  "description": "Shareable @eslint config of @dcmhub.",
+  "keywords": [
+    "dcmhub",
+    "eslint",
+    "eslint-config",
+    "linter",
+    "react",
+    "typescript"
+  ],
+  "homepage": "https://npm.im/@dcm/eslint-config",
+  "bugs": {
+    "url": "https://github.com/dcmhub/chores/issues",
+    "email": "hello@dcmhub.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcmhub/chores",
+    "directory": "packages/eslint-conifg"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "DcmHub Inc.",
+    "email": "hello@dcmhub.com",
+    "url": "https://dcmhub.com"
+  },
+  "contributors": [
+    {
+      "name": "Ritchie Zhu",
+      "email": "laozhu.me@gmail.com",
+      "url": "https://laozhu.me"
+    }
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "tsconfig.json"
+  ],
+  "dependencies": {
+    "@dcm/tsconfig": "^2.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-typescript": "^10.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-compat": "^3.8.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-html": "^6.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.0",
+    "eslint-plugin-jsdoc": "^30.4.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-markdown": "^2.0.0-rc.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-unicorn": "^21.0.0"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/eslint-parser": "^7.11.5",
+    "eslint": "^7.8.1",
+    "prettier": "^2.1.1",
+    "typescript": "^4.0.2"
+  },
+  "engines": {
+    "node": ">=12.18.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  }
+}
