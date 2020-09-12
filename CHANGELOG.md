@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2](https://github.com/dcmhub/chores/compare/v2.1.1...v2.1.2) (2020-09-12)
+
+
+### Bug Fixes
+
+* **eslint-config:** remove parserOptions.project config ([111cc7c](https://github.com/dcmhub/chores/commit/111cc7cf54f8338d36eeec143eb32d8ccd796597))
+
+
+
+
+
 ## [2.1.1](https://github.com/dcmhub/chores/compare/v2.1.0...v2.1.1) (2020-09-12)
 
 
