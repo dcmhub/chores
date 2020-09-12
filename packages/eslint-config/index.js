@@ -125,6 +125,7 @@ const eslintConfig = {
       'error',
       {
         cases: {
+          camelCase: true,
           kebabCase: true,
           pascalCase: true,
         },
