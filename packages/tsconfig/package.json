@@ -1,6 +1,6 @@
 {
   "name": "@dcm/tsconfig",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "private": false,
   "description": "Shareable tsconfig.json file of @dcmhub.",
   "keywords": [
@@ -35,7 +35,6 @@
   "files": [
     "tsconfig.json"
   ],
-  "dependencies": {},
   "engines": {
     "node": ">=12.18.3"
   },

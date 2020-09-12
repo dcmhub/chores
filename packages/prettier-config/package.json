@@ -1,6 +1,6 @@
 {
   "name": "@dcm/prettier-config",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "private": false,
   "description": "Shareable @prettier config of @dcmhub.",
   "keywords": [
@@ -36,7 +36,6 @@
   "files": [
     "index.js"
   ],
-  "dependencies": {},
   "peerDependencies": {
     "prettier": "^2.1.1"
   },
