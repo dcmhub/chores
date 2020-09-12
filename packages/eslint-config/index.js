@@ -1,5 +1,11 @@
+const fs = require('fs');
+const path = require('path');
+
 /** Filename extensions supportted by eslint */
 const extensions = ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts', '.json'];
+
+/** Has tsconfig.json or not */
+const hasTsConfig = fs.existsSync(path.join(process.env.PWD || '.', 'tsconfig.json'));
 
 const eslintConfig = {
   parser: '@babel/eslint-parser',
@@ -8,6 +14,10 @@ const eslintConfig = {
     sourceType: 'module',
     requireConfigFile: false,
     allowImportExportEverywhere: false,
+
+    // https://babeljs.io/docs/en/options
+    babelOptions: {},
+
     ecmaFeatures: {
       jsx: true,
       impliedStrict: true,
@@ -282,6 +292,9 @@ const eslintConfig = {
         lib: ['es2020'],
         ecmaVersion: 2020,
         sourceType: 'module',
+        project: './tsconfig.json',
+        tsconfigRootDir: !hasTsConfig ? __dirname : undefined,
+        createDefaultProgram: !hasTsConfig,
         warnOnUnsupportedTypeScriptVersion: true,
         ecmaFeatures: {
           jsx: true,
