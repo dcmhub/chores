@@ -1,11 +1,5 @@
-const fs = require('fs');
-const path = require('path');
-
 /** Filename extensions supportted by eslint */
 const extensions = ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts', '.json'];
-
-/** Has tsconfig.json or not */
-const hasTsConfig = fs.existsSync(path.join(process.env.PWD || '.', 'tsconfig.json'));
 
 const eslintConfig = {
   parser: '@babel/eslint-parser',
@@ -14,10 +8,6 @@ const eslintConfig = {
     sourceType: 'module',
     requireConfigFile: false,
     allowImportExportEverywhere: false,
-
-    // https://babeljs.io/docs/en/options
-    babelOptions: {},
-
     ecmaFeatures: {
       jsx: true,
       impliedStrict: true,
@@ -112,26 +102,17 @@ const eslintConfig = {
     // Disable some promise rules
     'promise/always-return': 'off',
 
+    // Disable some jsdoc rules
+    'jsdoc/no-undefined-types': 'off',
+
     // Disable some unicorn rules
+    'unicorn/filename-case': 'off',
     'unicorn/no-fn-reference-in-iterator': 'off',
     'unicorn/no-null': 'off',
     'unicorn/no-reduce': 'off',
     'unicorn/no-unreadable-array-destructuring': 'off',
     'unicorn/prefer-query-selector': 'off',
     'unicorn/prevent-abbreviations': 'off',
-
-    // Support kekab and pascal case filenames
-    'unicorn/filename-case': [
-      'error',
-      {
-        cases: {
-          camelCase: true,
-          kebabCase: true,
-          pascalCase: true,
-        },
-        ignore: [],
-      },
-    ],
 
     // Turn off some import rules
     'import/extensions': 'off',
@@ -301,8 +282,6 @@ const eslintConfig = {
         lib: ['es2020'],
         ecmaVersion: 2020,
         sourceType: 'module',
-        project: './tsconfig.json',
-        tsconfigRootDir: !hasTsConfig ? __dirname : undefined,
         warnOnUnsupportedTypeScriptVersion: true,
         ecmaFeatures: {
           jsx: true,
