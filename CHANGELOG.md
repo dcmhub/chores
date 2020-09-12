@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.3](https://github.com/dcmhub/chores/compare/v2.1.2...v2.1.3) (2020-09-12)
+
+
+### Reverts
+
+* **eslint-config:** revert last commit ([33a01c0](https://github.com/dcmhub/chores/commit/33a01c0df0502f2ea04681ea8566c0056ccdc630))
+
+
+
+
+
 ## [2.1.2](https://github.com/dcmhub/chores/compare/v2.1.1...v2.1.2) (2020-09-12)
 
 
