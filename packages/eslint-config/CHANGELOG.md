@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/dcmhub/chores/compare/v2.1.0...v2.1.1) (2020-09-12)
+
+
+### Bug Fixes
+
+* **eslint-config:** support camelcase filename ([e86139d](https://github.com/dcmhub/chores/commit/e86139dfdf2f22e6c6df2b894645bd256464cb8b))
+
+
+
+
+
 # 2.1.0 (2020-09-12)
 
 
