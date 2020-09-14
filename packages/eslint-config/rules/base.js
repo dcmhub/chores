@@ -9,7 +9,7 @@ module.exports = {
     'plugin:compat/recommended',
   ],
 
-  plugins: ['html', 'markdown'],
+  plugins: ['import', 'html', 'markdown'],
 
   env: {
     browser: true,
@@ -115,6 +115,7 @@ module.exports = {
     'import/no-cycle': 'off',
     'import/no-default-export': 'off',
     'import/prefer-default-export': 'off',
+    'import/no-unresolved': 'error',
 
     // Ignore extraneous dependencies in build tools
     'import/no-extraneous-dependencies': [

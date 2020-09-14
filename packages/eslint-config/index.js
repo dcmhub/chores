@@ -1,3 +1,18 @@
+const fs = require('fs');
+const path = require('path');
+
+const project = ['tsconfig.json'];
+const lernaConfigPath = path.join(process.env.PWD || '.', 'lerna.json');
+
+// Check if lerna.json exsits
+if (fs.existsSync(lernaConfigPath)) {
+  // eslint-disable-next-line import/no-dynamic-require
+  const lernaConfig = require(lernaConfigPath);
+  if (lernaConfig.packages.length !== 0) {
+    lernaConfig.packages.forEach((pkg) => project.push(path.join(pkg, 'tsconfig.json')));
+  }
+}
+
 module.exports = {
   parserOptions: {
     ecmaVersion: 2020,
@@ -27,6 +42,9 @@ module.exports = {
         'prettier/babel',
         'prettier/unicorn',
       ],
+      parserOptions: {
+        babelOptions: {},
+      },
     },
 
     {
@@ -42,26 +60,33 @@ module.exports = {
         'prettier/react',
         'prettier/unicorn',
       ],
+      parserOptions: {
+        babelOptions: {},
+      },
     },
 
     {
       // Lint typescript files
       files: ['**/*.ts', '**/*.md/*.ts'],
       extends: [
-        'airbnb-base',
+        'airbnb-typescript/base',
         require.resolve('./rules/base.js'),
         require.resolve('./rules/typescript.js'),
         'plugin:prettier/recommended',
         'prettier/@typescript-eslint',
         'prettier/unicorn',
       ],
+      parserOptions: { project },
+      settings: {
+        typescript: { project },
+      },
     },
 
     {
       // Lint typescript react files
       files: ['**/*.tsx', '**/*.md/*.tsx'],
       extends: [
-        'airbnb',
+        'airbnb-typescript',
         require.resolve('./rules/base.js'),
         require.resolve('./rules/react.js'),
         require.resolve('./rules/typescript.js'),
@@ -70,13 +95,9 @@ module.exports = {
         'prettier/react',
         'prettier/unicorn',
       ],
-    },
-
-    {
-      // Lint typescript declare type files
-      files: ['**/*.d.ts'],
-      rules: {
-        '@typescript-eslint/no-unused-vars': 'off',
+      parserOptions: { project },
+      settings: {
+        typescript: { project },
       },
     },
   ],
