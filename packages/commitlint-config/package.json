@@ -1,6 +1,6 @@
 {
   "name": "@dcm/commitlint-config",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": false,
   "description": "Shareable commitlint and @commitizen config of @dcmhub monorepo.",
   "keywords": [
