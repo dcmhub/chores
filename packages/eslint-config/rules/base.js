@@ -41,6 +41,7 @@ module.exports = {
     'global-require': 'off',
     'no-bitwise': 'off',
     'no-empty-function': 'off',
+    'no-unsafe-finally': 'off',
     'no-restricted-syntax': 'off',
     'no-param-reassign': [
       'error',
@@ -81,6 +82,7 @@ module.exports = {
       'error',
       {
         capIsNewExceptions: ['App', 'Page', 'Component', 'Behavior'],
+        capIsNewExceptionPattern: '^[A-Z][a-zA-Z0-9]*Service$',
       },
     ],
 
@@ -181,6 +183,11 @@ module.exports = {
             pattern: '@chenfeng/**',
             group: 'internal',
             position: 'before',
+          },
+          {
+            pattern: '@/**',
+            group: 'internal',
+            position: 'after',
           },
         ],
         'groups': [

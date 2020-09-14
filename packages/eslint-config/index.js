@@ -47,7 +47,7 @@ module.exports = {
     },
 
     {
-      // lint javascript react files
+      // Lint javascript react files
       files: ['**/*.jsx', '**/*.md/*.jsx'],
       extends: [
         'airbnb',
@@ -64,7 +64,7 @@ module.exports = {
     },
 
     {
-      // lint typescript files
+      // Lint typescript files
       files: ['**/*.ts', '**/*.md/*.ts'],
       parserOptions: { project },
       extends: [
@@ -80,7 +80,7 @@ module.exports = {
     },
 
     {
-      // lint typescript react files
+      // Lint typescript react files
       files: ['**/*.tsx', '**/*.md/*.tsx'],
       parserOptions: { project },
       extends: [
@@ -95,6 +95,15 @@ module.exports = {
         'prettier/react',
         'prettier/unicorn',
       ],
+    },
+
+    {
+      // Lint typescript declare type files
+      files: ['**/*.d.ts'],
+      rules: {
+        'camelcase': 'off',
+        '@typescript-eslint/no-unused-vars': 'off',
+      },
     },
   ],
 };
