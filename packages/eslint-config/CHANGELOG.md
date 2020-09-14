@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.7](https://github.com/dcmhub/chores/compare/v2.2.6...v2.2.7) (2020-09-14)
+
+
+### Bug Fixes
+
+* **eslint-config:** remove extensions key ([c789551](https://github.com/dcmhub/chores/commit/c789551ab028df9c8d6eeccc879ddf8ca303498f))
+
+
+
+
+
 ## [2.2.6](https://github.com/dcmhub/chores/compare/v2.2.5...v2.2.6) (2020-09-14)
 
 
