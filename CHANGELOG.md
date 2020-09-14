@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.5](https://github.com/dcmhub/chores/compare/v2.2.4...v2.2.5) (2020-09-14)
+
+
+### Bug Fixes
+
+* **eslint-config:** import from alias paths, lost types ([e167c6d](https://github.com/dcmhub/chores/commit/e167c6d7fdabc5945610a2b18737a448ed55c49e))
+
+
+
+
+
 ## [2.2.4](https://github.com/dcmhub/chores/compare/v2.2.3...v2.2.4) (2020-09-14)
 
 **Note:** Version bump only for package @dcm/chores
