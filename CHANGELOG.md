@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.2](https://github.com/dcmhub/chores/compare/v2.2.1...v2.2.2) (2020-09-14)
+
+
+### Bug Fixes
+
+* **eslint-config:** typescript declare type file ([120dc4f](https://github.com/dcmhub/chores/commit/120dc4f643a34d1cff1d7594be0220152100c225))
+
+
+
+
+
 ## [2.2.1](https://github.com/dcmhub/chores/compare/v2.2.0...v2.2.1) (2020-09-14)
 
 
