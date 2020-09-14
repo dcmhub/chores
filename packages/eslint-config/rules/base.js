@@ -40,13 +40,20 @@ module.exports = {
   rules: {
     'global-require': 'off',
     'no-bitwise': 'off',
-    'no-console': 'warn',
     'no-empty-function': 'off',
     'no-restricted-syntax': 'off',
     'no-param-reassign': [
       'error',
       {
         props: false,
+      },
+    ],
+
+    // Allow console.warn and console.error
+    'no-console': [
+      'warn',
+      {
+        allow: ['warn', 'error'],
       },
     ],
 
