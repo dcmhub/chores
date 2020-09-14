@@ -2,9 +2,6 @@
   "$schema": "https://json.schemastore.org/eslintrc",
   "root": true,
   "extends": "@dcm/eslint-config",
-  "rules": {
-    "global-require": "off"
-  },
   "settings": {
     "polyfills": []
   }

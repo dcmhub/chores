@@ -3,5 +3,14 @@
   "extends": "@dcm/tsconfig",
   "files": [],
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": [".next", ".umi", ".umi-production", "build", "dist", "node_modules", "out", "public"]
+  "exclude": [".next", ".umi", ".umi-production", "build", "dist", "node_modules", "out", "public"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "dist",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@@/*": ["./src/.umi/*"]
+    }
+  }
 }
