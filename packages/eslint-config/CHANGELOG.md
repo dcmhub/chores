@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/dcmhub/chores/compare/v2.2.0...v2.2.1) (2020-09-14)
+
+
+### Bug Fixes
+
+* **eslint-config:** project parse error ([ae81e8f](https://github.com/dcmhub/chores/commit/ae81e8f46850f6563d51567281ed4df8815d5009))
+
+
+### Features
+
+* **eslint-config:** allow console.warn and console.error ([08224ee](https://github.com/dcmhub/chores/commit/08224ee32f6f7ec26d5e549f516d0c22fbc53a9f))
+
+
+
+
+
 # [2.2.0](https://github.com/dcmhub/chores/compare/v2.1.3...v2.2.0) (2020-09-14)
 
 **Note:** Version bump only for package @dcm/eslint-config
