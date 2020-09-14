@@ -80,7 +80,6 @@ module.exports = {
       settings: {
         'import/resolver': {
           typescript: { project },
-          extensions: ['.ts', '.tsx', '.d.ts'],
         },
       },
     },
@@ -102,7 +101,6 @@ module.exports = {
       settings: {
         'import/resolver': {
           typescript: { project },
-          extensions: ['.ts', '.tsx', '.d.ts'],
         },
       },
     },
