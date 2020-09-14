@@ -2,7 +2,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     lib: ['es2020'],
-    project: './tsconfig',
+    project: 'tsconfig.json',
     warnOnUnsupportedTypeScriptVersion: true,
   },
 
@@ -14,11 +14,15 @@ module.exports = {
   plugins: ['@typescript-eslint'],
 
   rules: {
+    // TODO: properties can't be ignored in interface
+    'camelcase': 'off',
+
     // Turn off some typescript rules
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-var-requires': 'off',
@@ -44,8 +48,16 @@ module.exports = {
   },
 
   settings: {
-    jsdoc: {
+    'jsdoc': {
       mode: 'typescript',
+    },
+    'import/resolver': {
+      typescript: {
+        project: 'tsconfig.json',
+      },
+    },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
     },
   },
 };

@@ -116,16 +116,6 @@ module.exports = {
     'import/no-default-export': 'off',
     'import/prefer-default-export': 'off',
 
-    // Fix unresolved for import aliases
-    'import/no-unresolved': [
-      'error',
-      {
-        caseSensitive: true,
-        commonjs: true,
-        ignore: ['^@/', '^@@/'],
-      },
-    ],
-
     // Ignore extraneous dependencies in build tools
     'import/no-extraneous-dependencies': [
       'error',

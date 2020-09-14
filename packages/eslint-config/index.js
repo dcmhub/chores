@@ -36,10 +36,8 @@ module.exports = {
       files: ['**/*.js', '**/*.mjs', '**/*.md/*.js'],
       extends: [
         'airbnb-base',
-
         require.resolve('./rules/base.js'),
         require.resolve('./rules/babel.js'),
-
         'plugin:prettier/recommended',
         'prettier/babel',
         'prettier/unicorn',
@@ -51,11 +49,9 @@ module.exports = {
       files: ['**/*.jsx', '**/*.md/*.jsx'],
       extends: [
         'airbnb',
-
         require.resolve('./rules/base.js'),
         require.resolve('./rules/babel.js'),
         require.resolve('./rules/react.js'),
-
         'plugin:prettier/recommended',
         'prettier/babel',
         'prettier/react',
@@ -69,14 +65,17 @@ module.exports = {
       parserOptions: { project },
       extends: [
         'airbnb-typescript/base',
-
         require.resolve('./rules/base.js'),
         require.resolve('./rules/typescript.js'),
-
         'plugin:prettier/recommended',
         'prettier/@typescript-eslint',
         'prettier/unicorn',
       ],
+      settings: {
+        'import/resolver': {
+          typescript: { project },
+        },
+      },
     },
 
     {
@@ -85,23 +84,25 @@ module.exports = {
       parserOptions: { project },
       extends: [
         'airbnb-typescript',
-
         require.resolve('./rules/base.js'),
         require.resolve('./rules/react.js'),
         require.resolve('./rules/typescript.js'),
-
         'plugin:prettier/recommended',
         'prettier/@typescript-eslint',
         'prettier/react',
         'prettier/unicorn',
       ],
+      settings: {
+        'import/resolver': {
+          typescript: { project },
+        },
+      },
     },
 
     {
       // Lint typescript declare type files
       files: ['**/*.d.ts'],
       rules: {
-        'camelcase': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
       },
     },
