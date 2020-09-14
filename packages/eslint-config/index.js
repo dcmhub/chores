@@ -1,18 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
-const project = ['tsconfig.json'];
-const lernaConfigPath = path.join(process.env.PWD || '.', 'lerna.json');
-
-// Check if lerna.json exsits
-if (fs.existsSync(lernaConfigPath)) {
-  // eslint-disable-next-line import/no-dynamic-require
-  const lernaConfig = require(lernaConfigPath);
-  if (lernaConfig.packages.length !== 0) {
-    lernaConfig.packages.forEach((pkg) => project.push(path.join(pkg, 'tsconfig.json')));
-  }
-}
-
 module.exports = {
   parserOptions: {
     ecmaVersion: 2020,
@@ -62,28 +47,21 @@ module.exports = {
     {
       // Lint typescript files
       files: ['**/*.ts', '**/*.md/*.ts'],
-      parserOptions: { project },
       extends: [
-        'airbnb-typescript/base',
+        'airbnb-base',
         require.resolve('./rules/base.js'),
         require.resolve('./rules/typescript.js'),
         'plugin:prettier/recommended',
         'prettier/@typescript-eslint',
         'prettier/unicorn',
       ],
-      settings: {
-        'import/resolver': {
-          typescript: { project },
-        },
-      },
     },
 
     {
       // Lint typescript react files
       files: ['**/*.tsx', '**/*.md/*.tsx'],
-      parserOptions: { project },
       extends: [
-        'airbnb-typescript',
+        'airbnb',
         require.resolve('./rules/base.js'),
         require.resolve('./rules/react.js'),
         require.resolve('./rules/typescript.js'),
@@ -92,11 +70,6 @@ module.exports = {
         'prettier/react',
         'prettier/unicorn',
       ],
-      settings: {
-        'import/resolver': {
-          typescript: { project },
-        },
-      },
     },
 
     {

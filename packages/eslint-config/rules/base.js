@@ -2,7 +2,6 @@ module.exports = {
   extends: [
     'plugin:import/errors',
     'plugin:import/warnings',
-    'plugin:import/typescript',
     'plugin:promise/recommended',
     'plugin:unicorn/recommended',
     'plugin:jsdoc/recommended',
@@ -37,6 +36,7 @@ module.exports = {
     // Global variables for react app
     REACT_APP_ENV: true,
   },
+
   rules: {
     'global-require': 'off',
     'no-bitwise': 'off',
@@ -190,6 +190,7 @@ module.exports = {
       },
     ],
   },
+
   settings: {
     'polyfills': [],
     'jsdoc': {
@@ -197,10 +198,10 @@ module.exports = {
     },
     'html/html-extensions': ['.html', '.ejs'],
     'import/internal-regex': /^@(dcm|easynm|chenfeng)?\//,
-    'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts', '.json'],
+    'import/extensions': ['.js', '.mjs', '.jsx', '.json'],
     'import/resolver': {
       node: {
-        extensions: ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts', '.json'],
+        extensions: ['.js', '.mjs', '.jsx', '.json'],
       },
     },
   },

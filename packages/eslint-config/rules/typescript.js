@@ -1,12 +1,28 @@
+const fs = require('fs');
+const path = require('path');
+
+const project = ['./tsconfig.json'];
+const lernaConfigPath = path.join(process.env.PWD || '.', 'lerna.json');
+
+// Check if lerna.json exsits
+if (fs.existsSync(lernaConfigPath)) {
+  // eslint-disable-next-line import/no-dynamic-require
+  const lernaConfig = require(lernaConfigPath);
+  if (lernaConfig.packages.length !== 0) {
+    project.push('./packages/boss/tsconfig.json');
+  }
+}
+
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     lib: ['es2020'],
-    project: 'tsconfig.json',
+    project,
     warnOnUnsupportedTypeScriptVersion: true,
   },
 
   extends: [
+    'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
   ],
@@ -51,7 +67,11 @@ module.exports = {
     'jsdoc': {
       mode: 'typescript',
     },
+    'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts', '.json'],
     'import/resolver': {
+      node: {
+        extensions: ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts', '.json'],
+      },
       typescript: {
         project: 'tsconfig.json',
       },
