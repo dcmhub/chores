@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.3](https://github.com/dcmhub/chores/compare/v2.2.2...v2.2.3) (2020-09-14)
+
+
+### Bug Fixes
+
+* **eslint-config:** support typescript import path alias ([a3fa90f](https://github.com/dcmhub/chores/commit/a3fa90f468cfa73227c5f3b2b3bf8e90ea5d572f))
+
+
+
+
+
 ## [2.2.2](https://github.com/dcmhub/chores/compare/v2.2.1...v2.2.2) (2020-09-14)
 
 
