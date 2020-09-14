@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.6](https://github.com/dcmhub/chores/compare/v2.2.5...v2.2.6) (2020-09-14)
+
+
+### Bug Fixes
+
+* **eslint-config:** import resolver problem for typescript ([d0cf0ed](https://github.com/dcmhub/chores/commit/d0cf0ed2771b25e16962de8b44ac2e2ccd786d5e))
+
+
+
+
+
 ## [2.2.5](https://github.com/dcmhub/chores/compare/v2.2.4...v2.2.5) (2020-09-14)
 
 
