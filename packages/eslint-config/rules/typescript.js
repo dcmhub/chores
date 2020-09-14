@@ -1,8 +1,17 @@
 module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    lib: ['es2020'],
+    project: './tsconfig',
+    warnOnUnsupportedTypeScriptVersion: true,
+  },
+
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
   ],
+
+  plugins: ['@typescript-eslint'],
 
   rules: {
     // Turn off some typescript rules

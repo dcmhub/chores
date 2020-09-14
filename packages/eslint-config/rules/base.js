@@ -10,7 +10,7 @@ module.exports = {
     'plugin:compat/recommended',
   ],
 
-  plugins: ['html', 'markdown', 'prettier'],
+  plugins: ['html', 'markdown'],
 
   env: {
     browser: true,
@@ -77,8 +77,14 @@ module.exports = {
       },
     ],
 
-    // Turn on prettier rule
-    'prettier/prettier': 'error',
+    // Allow short circuit and ternary expressions
+    'no-unused-expressions': [
+      'error',
+      {
+        allowShortCircuit: true,
+        allowTernary: true,
+      },
+    ],
 
     // Turn off some promise rules
     'promise/always-return': 'off',

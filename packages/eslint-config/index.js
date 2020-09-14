@@ -1,34 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 
-/** Init tsconfig.json files and root directory */
-let tsconfigRootDir;
-let tsconfigFiles = './tsconfig.json';
+const project = ['tsconfig.json'];
+const lernaConfigPath = path.join(process.env.PWD || '.', 'lerna.json');
 
-const pwd = process.env.PWD || '.';
-const lernaConfigFile = path.join(pwd, 'lerna.json');
-const rootTsConfigFile = path.join(pwd, 'tsconfig.json');
-/** Check if lerna.json file exsits in project root */
-const hasLernaConfig = fs.existsSync(lernaConfigFile);
-/** Check if root tsconfig.json file exists */
-const hasRootTsConfig = fs.existsSync(rootTsConfigFile);
-
-if (hasLernaConfig) {
+// Check if lerna.json exsits
+if (fs.existsSync(lernaConfigPath)) {
   // eslint-disable-next-line import/no-dynamic-require
-  const lernaConfig = require(lernaConfigFile);
-
-  // Add tsconfig.json of all lerna packages
+  const lernaConfig = require(lernaConfigPath);
   if (lernaConfig.packages.length !== 0) {
-    tsconfigFiles = hasRootTsConfig ? [tsconfigFiles] : [];
-    lernaConfig.packages.forEach((pkg) => {
-      tsconfigFiles.push(path.join(pkg, 'tsconfig.json'));
-    });
+    lernaConfig.packages.forEach((pkg) => project.push(path.join(pkg, 'tsconfig.json')));
   }
-}
-
-// Use default tsconfig.json in eslint-config package
-if (!hasRootTsConfig && !Array.isArray(tsconfigFiles)) {
-  tsconfigRootDir = __dirname;
 }
 
 module.exports = {
@@ -42,8 +24,6 @@ module.exports = {
     },
   },
 
-  extends: ['airbnb-base', require.resolve('./rules/base.js'), 'prettier', 'prettier/unicorn'],
-
   overrides: [
     {
       // Lint markdown and mdx files
@@ -54,28 +34,30 @@ module.exports = {
     {
       // Lint javascript files
       files: ['**/*.js', '**/*.mjs', '**/*.md/*.js'],
-      parser: '@babel/eslint-parser',
-      parserOptions: {
-        requireConfigFile: false,
-        allowImportExportEverywhere: false,
-        babelOptions: {},
-      },
+      extends: [
+        'airbnb-base',
+
+        require.resolve('./rules/base.js'),
+        require.resolve('./rules/babel.js'),
+
+        'plugin:prettier/recommended',
+        'prettier/babel',
+        'prettier/unicorn',
+      ],
     },
 
     {
       // lint javascript react files
       files: ['**/*.jsx', '**/*.md/*.jsx'],
-      parser: '@babel/eslint-parser',
-      parserOptions: {
-        requireConfigFile: false,
-        allowImportExportEverywhere: false,
-        babelOptions: {},
-      },
       extends: [
         'airbnb',
+
         require.resolve('./rules/base.js'),
+        require.resolve('./rules/babel.js'),
         require.resolve('./rules/react.js'),
-        'prettier',
+
+        'plugin:prettier/recommended',
+        'prettier/babel',
         'prettier/react',
         'prettier/unicorn',
       ],
@@ -84,18 +66,14 @@ module.exports = {
     {
       // lint typescript files
       files: ['**/*.ts', '**/*.md/*.ts'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        lib: ['es2020'],
-        tsconfigRootDir,
-        project: tsconfigFiles,
-        warnOnUnsupportedTypeScriptVersion: true,
-      },
+      parserOptions: { project },
       extends: [
         'airbnb-typescript/base',
+
         require.resolve('./rules/base.js'),
         require.resolve('./rules/typescript.js'),
-        'prettier',
+
+        'plugin:prettier/recommended',
         'prettier/@typescript-eslint',
         'prettier/unicorn',
       ],
@@ -104,19 +82,15 @@ module.exports = {
     {
       // lint typescript react files
       files: ['**/*.tsx', '**/*.md/*.tsx'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        lib: ['es2020'],
-        tsconfigRootDir,
-        project: tsconfigFiles,
-        warnOnUnsupportedTypeScriptVersion: true,
-      },
+      parserOptions: { project },
       extends: [
         'airbnb-typescript',
+
         require.resolve('./rules/base.js'),
         require.resolve('./rules/react.js'),
         require.resolve('./rules/typescript.js'),
-        'prettier',
+
+        'plugin:prettier/recommended',
         'prettier/@typescript-eslint',
         'prettier/react',
         'prettier/unicorn',
