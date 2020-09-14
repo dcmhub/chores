@@ -78,7 +78,10 @@ module.exports = {
       ],
       parserOptions: { project },
       settings: {
-        typescript: { project },
+        'import/resolver': {
+          typescript: { project },
+          extensions: ['.ts', '.tsx', '.d.ts'],
+        },
       },
     },
 
@@ -97,7 +100,10 @@ module.exports = {
       ],
       parserOptions: { project },
       settings: {
-        typescript: { project },
+        'import/resolver': {
+          typescript: { project },
+          extensions: ['.ts', '.tsx', '.d.ts'],
+        },
       },
     },
   ],

@@ -205,5 +205,9 @@ module.exports = {
         extensions: ['.js', '.mjs', '.jsx', '.json'],
       },
     },
+    'import/parsers': {
+      '@babel/eslint-parser': ['.js', '.jsx', '.mjs'],
+      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
+    },
   },
 };

@@ -18,6 +18,7 @@ module.exports = {
     'camelcase': 'off',
 
     // Turn off some typescript rules
+    '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
@@ -54,9 +55,6 @@ module.exports = {
       node: {
         extensions: ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts', '.json'],
       },
-    },
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
     },
   },
 };
