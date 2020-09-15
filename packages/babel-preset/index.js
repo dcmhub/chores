@@ -2,7 +2,8 @@ const path = require('path');
 const { declare } = require('@babel/helper-plugin-utils');
 
 module.exports = declare((api, options = {}) => {
-  const isDev = api.env('development');
+  const env = api.env();
+  const isDev = env === 'development';
 
   api.assertVersion('^7.0.0');
   api.cache.using(() => isDev);
@@ -16,49 +17,50 @@ module.exports = declare((api, options = {}) => {
     exclude,
     react = false,
     typescript = false,
+    alias = false,
     transformRuntime = true,
-    importAntDesign = false,
-    importAntDesignMobile = false,
-    importMaterialUi = false,
   } = options;
 
   // Initial babel presets
   const presets = [
-    require('@babel/preset-env'),
-    {
-      debug,
-      targets,
-      modules,
-      useBuiltIns,
-      corejs: 3,
-      bugfixes: true,
-      exclude: Array.isArray(exclude)
-        ? exclude
-        : [
-            'transform-async-to-generator',
-            'transform-literals',
-            'transform-modules-amd',
-            'transform-modules-systemjs',
-            'transform-modules-umd',
-            'transform-new-target',
-            'transform-regenerator',
-            'transform-sticky-regex',
-            'transform-template-literals',
-            'transform-typeof-symbol',
-            'transform-unicode-regex',
-          ],
-    },
+    [
+      require('@babel/preset-env'),
+      {
+        debug,
+        targets,
+        modules,
+        useBuiltIns,
+        corejs: 3,
+        bugfixes: true,
+        browserslistEnv: env ?? 'production',
+        exclude: Array.isArray(exclude)
+          ? exclude
+          : [
+              'transform-async-to-generator',
+              'transform-literals',
+              'transform-modules-amd',
+              'transform-modules-systemjs',
+              'transform-modules-umd',
+              'transform-new-target',
+              'transform-regenerator',
+              'transform-sticky-regex',
+              'transform-template-literals',
+              'transform-typeof-symbol',
+              'transform-unicode-regex',
+            ],
+      },
+    ],
   ];
 
   // Initial babel plugins
   const plugins = [
-    [require('@babel/plugin-proposal-decorators'), { decoratorsBeforeExport: true }],
-    [require('@babel/plugin-proposal-class-properties'), { loose: true }],
-    [require('@babel/plugin-proposal-logical-assignment-operators'), {}],
-    [require('@babel/plugin-proposal-nullish-coalescing-operator'), { loose: true }],
-    [require('@babel/plugin-proposal-numeric-separator'), {}],
-    [require('@babel/plugin-proposal-optional-chaining'), { loose: true }],
-    [require('@babel/plugin-proposal-private-methods'), { loose: true }],
+    [require('@babel/plugin-proposal-decorators').default, { decoratorsBeforeExport: true }],
+    [require('@babel/plugin-proposal-class-properties').default, { loose: true }],
+    [require('@babel/plugin-proposal-logical-assignment-operators').default, {}],
+    [require('@babel/plugin-proposal-nullish-coalescing-operator').default, { loose: true }],
+    [require('@babel/plugin-proposal-numeric-separator').default, {}],
+    [require('@babel/plugin-proposal-optional-chaining').default, { loose: true }],
+    [require('@babel/plugin-proposal-private-methods').default, { loose: true }],
   ];
 
   // Add transform runtime plugin
@@ -73,124 +75,55 @@ module.exports = declare((api, options = {}) => {
     ]);
   }
 
-  // Optimize ant-design import
-  if (importAntDesign) {
-    plugins.concat([
-      [
-        require.resolve('babel-plugin-import'),
-        {
-          libraryName: 'antd',
-          libraryDirectory: modules === false ? 'es' : 'lib',
-          style: true,
+  // Support path alias with babel
+  if (alias) {
+    plugins.push([
+      require('babel-plugin-module-resolver').default,
+      {
+        root: ['.'],
+        alias: {
+          '@/assets': './src/assets',
+          '@/components': './src/components',
+          '@/constants': './src/constants',
+          '@/defaultSettings': './src/defaultSettings',
+          '@/interfaces': './src/interfaces',
+          '@/layouts': './src/layouts',
+          '@/locales': './src/locales',
+          '@/models': './src/models',
+          '@/pages': './src/pages',
+          '@/services': './src/services',
+          '@/utils': './src/utils',
         },
-        'antd',
-      ],
-      [
-        require.resolve('babel-plugin-import'),
-        {
-          libraryName: '@ant-design/icons',
-          libraryDirectory: modules === false ? 'es/icons' : '',
-          camel2DashComponentName: false,
-        },
-        '@ant-design/icons',
-      ],
-    ]);
-  }
-
-  // Optimize ant-design-mobile import
-  if (importAntDesignMobile) {
-    plugins.concat([
-      [
-        require.resolve('babel-plugin-import'),
-        {
-          libraryName: 'antd-mobile',
-          libraryDirectory: modules === false ? 'es' : 'lib',
-          style: true,
-        },
-        'antd-mobile',
-      ],
-      [
-        require.resolve('babel-plugin-import'),
-        {
-          libraryName: '@ant-design/icons',
-          libraryDirectory: modules === false ? 'es/icons' : '',
-          camel2DashComponentName: false,
-        },
-        '@ant-design/icons',
-      ],
-    ]);
-  }
-
-  // Optimize material-ui import
-  if (importMaterialUi) {
-    plugins.concat([
-      [
-        require.resolve('babel-plugin-import'),
-        {
-          libraryName: '@material-ui/core',
-          libraryDirectory: modules === false ? 'esm' : '',
-          camel2DashComponentName: false,
-        },
-        '@material-ui/core',
-      ],
-      [
-        'babel-plugin-import',
-        {
-          libraryName: '@material-ui/icons',
-          libraryDirectory: modules === false ? 'esm' : '',
-          camel2DashComponentName: false,
-        },
-        '@material-ui/icons',
-      ],
-      [
-        'babel-plugin-import',
-        {
-          libraryName: '@material-ui/lab',
-          libraryDirectory: modules === false ? 'esm' : '',
-          camel2DashComponentName: false,
-        },
-        '@material-ui/lab',
-      ],
-      [
-        'babel-plugin-import',
-        {
-          libraryName: '@material-ui/pickers',
-          libraryDirectory: modules === false ? 'esm' : '',
-          camel2DashComponentName: false,
-        },
-        '@material-ui/pickers',
-      ],
+      },
     ]);
   }
 
   // Add react preset and plugins
   if (react) {
     presets.push([
-      require('@babel/preset-react'),
+      require('@babel/preset-react').default,
       {
         useBuiltIns: true,
         development: isDev,
       },
     ]);
 
-    if (isDev) {
+    if (!isDev) {
+      plugins.push([require('@babel/plugin-transform-react-constant-elements').default, {}]);
+      plugins.push([require('@babel/plugin-transform-react-inline-elements').default, {}]);
       plugins.push([
-        require('babel-plugin-transform-react-remove-prop-types'),
+        require('babel-plugin-transform-react-remove-prop-types').default,
         {
-          mode: 'remove',
           removeImport: true,
         },
       ]);
-    } else {
-      plugins.push([require('@babel/plugin-transform-react-constant-elements'), {}]);
-      plugins.push([require('@babel/plugin-transform-react-inline-elements'), {}]);
     }
   }
 
   // Add typescript preset and plugins
   if (typescript) {
     presets.push([
-      require('@babel/preset-typescript'),
+      require('@babel/preset-typescript').default,
       {
         isTSX: react,
         allExtensions: react,

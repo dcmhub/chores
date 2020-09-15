@@ -40,7 +40,7 @@
     "noUnusedParameters": true,
 
     // Experimental
-    "emitDecoratorMetadata": false,
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
 
     // Advanced
