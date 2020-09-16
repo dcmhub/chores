@@ -3,6 +3,6 @@
   "root": true,
   "extends": "@dcm/eslint-config",
   "settings": {
-    "polyfills": []
+    "polyfills": ["URLSearchParams"]
   }
 }

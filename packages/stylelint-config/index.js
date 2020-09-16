@@ -13,6 +13,7 @@ const stylelintConfig = {
   rules: {
     'function-url-quotes': 'always',
     'no-descending-specificity': null,
+    'value-keyword-case': null,
 
     // Support miniprogram rpx unit
     'unit-no-unknown': [

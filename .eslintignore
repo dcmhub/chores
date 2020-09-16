@@ -2,6 +2,8 @@
 .next
 .umi
 .umi-production
+!.umirc.js
+!.umirc.ts
 build
 dist
 node_modules

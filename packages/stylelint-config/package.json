@@ -46,7 +46,7 @@
     "stylelint-order": "^4.1.0"
   },
   "peerDependencies": {
-    "prettier": "^2.1.1",
+    "prettier": "^2.1.2",
     "stylelint": "^13.7.1"
   },
   "engines": {
