@@ -13,6 +13,7 @@ module.exports = {
     'react/no-array-index-key': 'warn',
     'react/prop-types': 'off',
     'react/sort-comp': 'warn',
+    'react/state-in-constructor': 'off',
 
     // JSX filename extensioins
     'react/jsx-filename-extension': [

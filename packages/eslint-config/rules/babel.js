@@ -1,11 +1,4 @@
 module.exports = {
-  parser: '@babel/eslint-parser',
-
-  parserOptions: {
-    requireConfigFile: false,
-    allowImportExportEverywhere: false,
-  },
-
   plugins: ['@babel'],
 
   rules: {
@@ -35,5 +28,11 @@ module.exports = {
         allowTernary: true,
       },
     ],
+  },
+
+  settings: {
+    'import/resolver': {
+      'babel-module': {},
+    },
   },
 };

@@ -1,0 +1,39 @@
+module.exports = {
+  parser: '@babel/eslint-parser',
+
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    requireConfigFile: false,
+    allowImportExportEverywhere: false,
+    ecmaFeatures: {
+      jsx: true,
+      impliedStrict: true,
+      globalReturn: false,
+    },
+    babelOptions: {
+      presets: [
+        [
+          '@dcm/babel-preset',
+          {
+            alias: true,
+            react: true,
+          },
+        ],
+      ],
+    },
+  },
+
+  extends: [
+    'airbnb',
+
+    require.resolve('./rules/base.js'),
+    require.resolve('./rules/babel.js'),
+    require.resolve('./rules/react.js'),
+
+    'plugin:prettier/recommended',
+    'prettier/babel',
+    'prettier/react',
+    'prettier/unicorn',
+  ],
+};

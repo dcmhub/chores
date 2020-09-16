@@ -1,3 +1,5 @@
+const extensions = ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts', '.json'];
+
 module.exports = {
   extends: [
     'plugin:import/errors',
@@ -43,6 +45,8 @@ module.exports = {
     'no-empty-function': 'off',
     'no-unsafe-finally': 'off',
     'no-restricted-syntax': 'off',
+
+    // Allow reassign properties of param only
     'no-param-reassign': [
       'error',
       {
@@ -115,7 +119,6 @@ module.exports = {
     'import/no-cycle': 'off',
     'import/no-default-export': 'off',
     'import/prefer-default-export': 'off',
-    'import/no-unresolved': 'error',
 
     // Ignore extraneous dependencies in build tools
     'import/no-extraneous-dependencies': [
@@ -158,22 +161,12 @@ module.exports = {
     'import/order': [
       'warn',
       {
-        'newlines-between': 'never',
+        'newlines-between': 'always',
         'pathGroups': [
           {
-            pattern: '@dcm/**',
+            pattern: '@+(dcm|easynm|chenfeng)/**',
             group: 'internal',
-            position: 'before',
-          },
-          {
-            pattern: '@easynm/**',
-            group: 'internal',
-            position: 'before',
-          },
-          {
-            pattern: '@chenfeng/**',
-            group: 'internal',
-            position: 'before',
+            position: 'after',
           },
           {
             pattern: '@/**',
@@ -193,21 +186,28 @@ module.exports = {
   },
 
   settings: {
-    'polyfills': [],
-    'jsdoc': {
-      mode: 'jsdoc',
-    },
+    // Settings for eslint html plugin
     'html/html-extensions': ['.html', '.ejs'],
+
+    // Settings for eslint import plugin
+    'import/extensions': extensions,
     'import/internal-regex': /^@(dcm|easynm|chenfeng)?\//,
-    'import/extensions': ['.js', '.mjs', '.jsx', '.json'],
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.mjs', '.jsx', '.json'],
-      },
-    },
     'import/parsers': {
       '@babel/eslint-parser': ['.js', '.jsx', '.mjs'],
       '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
     },
+    'import/resolver': {
+      node: {
+        extensions,
+      },
+    },
+
+    // Settings for eslint jsdoc plugin
+    'jsdoc': {
+      mode: 'jsdoc',
+    },
+
+    // Settings for eslint compat plugin
+    'polyfills': [],
   },
 };
