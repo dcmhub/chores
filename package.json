@@ -49,12 +49,12 @@
     "commit": "git-cz",
     "commit:dirty": "yarn run commit --no-verify",
     "dev": "lerna run dev",
-    "eslint": "eslint --cache --ext .js,.jsx,.mjs,.ts,.tsx,.html,.md,.mdx --format=pretty .",
+    "eslint": "eslint --cache --ext .js,.jsx,.mjs,.ts,.tsx,.html --format=pretty .",
     "eslint:fix": "yarn run eslint --fix",
     "lint": "run-s stylelint eslint prettier check:types check:size",
     "lint:fix": "run-s stylelint:fix eslint:fix prettier:fix",
-    "prettier": "prettier --check \"**/*.{json,js,jsx,mjs,ts,tsx,css,scss,less,wxss,html,md,mdx}\"",
-    "prettier:fix": "prettier --write \"**/*.{json,js,jsx,mjs,ts,tsx,css,scss,less,wxss,html,md,mdx}\"",
+    "prettier": "prettier --check \"**/*.{json,css,scss,less,wxss,html,md,mdx}\"",
+    "prettier:fix": "prettier --write \"**/*.{json,css,scss,less,wxss,html,md,mdx}\"",
     "release": "lerna publish from-package",
     "start": "lerna run start",
     "stylelint": "stylelint --cache --aei \"**/*.{css,scss,less,wxss}\"",
@@ -74,8 +74,8 @@
   },
   "lint-staged": {
     "**/*.{css,scss,less,wxss}": "yarn run stylelint",
-    "**/*.{js,jsx,mjs,ts,tsx,html,md,mdx}": "yarn run eslint",
-    "**/*.{json,js,jsx,mjs,ts,tsx,css,scss,less,wxss,html,md,mdx}": "pretty-quick --staged"
+    "**/*.{js,jsx,mjs,ts,tsx,html}": "yarn run eslint",
+    "**/*.{json,css,scss,less,wxss,html,md,mdx}": "pretty-quick --staged"
   },
   "config": {
     "commitizen": {
@@ -111,9 +111,9 @@
     "@types/express": "^4.17.8",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
-    "@types/webpack-env": "^1.15.2",
+    "@types/webpack-env": "^1.15.3",
     "babel-plugin-module-resolver": "^4.0.0",
-    "browserslist": "^4.14.2",
+    "browserslist": "^4.14.3",
     "commitizen": "^4.2.1",
     "cross-env": "^7.0.2",
     "eslint": "^7.9.0",
@@ -121,7 +121,7 @@
     "esm": "^3.2.25",
     "husky": "^4.3.0",
     "lerna": "^3.22.1",
-    "lint-staged": "^10.3.0",
+    "lint-staged": "^10.4.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2",
     "prettier-plugin-packagejson": "^2.2.5",

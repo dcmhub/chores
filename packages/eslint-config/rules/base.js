@@ -11,7 +11,7 @@ module.exports = {
     'plugin:compat/recommended',
   ],
 
-  plugins: ['import', 'html', 'markdown'],
+  plugins: ['import', 'html'],
 
   env: {
     browser: true,
@@ -161,8 +161,28 @@ module.exports = {
     'import/order': [
       'warn',
       {
+        'alphabetize': {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+        'groups': [
+          ['builtin'],
+          ['external', 'internal'],
+          ['parent', 'sibling', 'index'],
+          ['unknown'],
+        ],
         'newlines-between': 'always',
         'pathGroups': [
+          {
+            pattern: '+(ahooks|clsx|dayjs|lodash-es|react|react-dom|umi|umi-request)',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '@+(ant-design|material-ui)/**',
+            group: 'internal',
+            position: 'after',
+          },
           {
             pattern: '@+(dcm|easynm|chenfeng)/**',
             group: 'internal',
@@ -173,14 +193,13 @@ module.exports = {
             group: 'internal',
             position: 'after',
           },
+          {
+            pattern: './**/*.+(css|scss|sass|less|png|jpg|jpeg|gif|svg|webp|avif|tiff|bmp|mp3|mp4)',
+            group: 'unknown',
+            position: 'before',
+          },
         ],
-        'groups': [
-          ['builtin'],
-          ['external'],
-          ['internal'],
-          ['parent', 'sibling', 'index'],
-          ['unknown'],
-        ],
+        'pathGroupsExcludedImportTypes': ['umi'],
       },
     ],
   },

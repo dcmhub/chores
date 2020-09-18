@@ -37,12 +37,27 @@ module.exports = {
     ],
 
     // Allowed typescript version no-unused-vars
+    'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
         args: 'after-used',
         ignoreRestSiblings: true,
         argsIgnorePattern: '^_',
+      },
+    ],
+
+    // Naming conventions for typescript
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'default',
+        format: ['camelCase', 'PascalCase', 'UPPER_CASE', 'snake_case'],
+        leadingUnderscore: 'allow',
+      },
+      {
+        selector: 'typeLike',
+        format: ['PascalCase'],
       },
     ],
   },
