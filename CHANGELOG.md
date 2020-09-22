@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.2](https://github.com/dcmhub/chores/compare/v2.3.1...v2.3.2) (2020-09-22)
+
+
+### Bug Fixes
+
+* **eslint-config:** turn off naming-convention rule for .d.ts file ([0ff1092](https://github.com/dcmhub/chores/commit/0ff10921d83a3042a7dac6e7fbc6784f6f110c48))
+
+
+
+
+
 ## [2.3.1](https://github.com/dcmhub/chores/compare/v2.3.0...v2.3.1) (2020-09-18)
 
 
