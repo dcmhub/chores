@@ -30,5 +30,19 @@ module.exports = {
       files: ['**/*.tsx'],
       extends: [require.resolve('./ts-react.js')],
     },
+    {
+      // Turn off naming-convention rule for '.d.ts' files
+      files: ['**/*.d.ts'],
+      rules: {
+        '@typescript-eslint/naming-convention': 'off',
+      },
+    },
+    {
+      // Turn off prettier/prettier rule for generated CSS '.d.ts' files
+      files: ['**/*.css.d.ts', '**/*.scss.d.ts', '**/*.sass.d.ts', '**/*.less.d.ts'],
+      rules: {
+        'prettier/prettier': 'off',
+      },
+    },
   ],
 };
