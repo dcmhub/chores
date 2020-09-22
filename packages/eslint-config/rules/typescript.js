@@ -8,9 +8,6 @@ module.exports = {
   plugins: ['@typescript-eslint'],
 
   rules: {
-    // TODO: The camelcase rule can't effect '.d.ts' file, so turn off it
-    'camelcase': 'off',
-
     // Turn off some typescript rules
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
@@ -67,4 +64,22 @@ module.exports = {
       mode: 'typescript',
     },
   },
+
+  overrides: [
+    {
+      // TODO: The camelcase rule can't effect '.d.ts' file, so turn off it
+      files: ['**/*.d.ts'],
+      rules: {
+        'camelcase': 'off',
+        '@typescript-eslint/naming-convention': 'off',
+      },
+    },
+    {
+      // Turn off prettier/prettier rule for generated CSS .d.ts files
+      files: ['**/*.css.d.ts', '**/*.scss.d.ts', '**/*.sass.d.ts', '**/*.less.d.ts'],
+      rules: {
+        'prettier/prettier': 'off',
+      },
+    },
+  ],
 };

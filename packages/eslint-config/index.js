@@ -1,6 +1,6 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 2021,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
@@ -29,13 +29,6 @@ module.exports = {
       // Lint typescript react files
       files: ['**/*.tsx'],
       extends: [require.resolve('./ts-react.js')],
-    },
-    {
-      // Turn off prettier/prettier rule for generated CSS .d.ts files
-      files: ['**/*.css.d.ts', '**/*.scss.d.ts', '**/*.sass.d.ts', '**/*.less.d.ts'],
-      rules: {
-        'prettier/prettier': 'off',
-      },
     },
   ],
 };
