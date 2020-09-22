@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.3](https://github.com/dcmhub/chores/compare/v2.3.2...v2.3.3) (2020-09-22)
+
+
+### Bug Fixes
+
+* **eslint-config:** override problem ([d05fa7e](https://github.com/dcmhub/chores/commit/d05fa7ebbd454caeeeeb47167a39d92f9e7877c9))
+
+
+
+
+
 ## [2.3.2](https://github.com/dcmhub/chores/compare/v2.3.1...v2.3.2) (2020-09-22)
 
 
