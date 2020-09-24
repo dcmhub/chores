@@ -10,8 +10,10 @@ module.exports = {
   rules: {
     'react/forbid-prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/jsx-uses-react': 'off',
     'react/no-array-index-key': 'warn',
     'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
     'react/sort-comp': 'warn',
     'react/state-in-constructor': 'off',
 

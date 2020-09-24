@@ -104,8 +104,9 @@ module.exports = declare((api, options = {}) => {
     presets.push([
       require('@babel/preset-react').default,
       {
-        useBuiltIns: true,
         development: isDev,
+        runtime: 'automatic',
+        useBuiltIns: true,
       },
     ]);
 
