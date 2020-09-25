@@ -113,7 +113,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/webpack-env": "^1.15.3",
     "babel-plugin-module-resolver": "^4.0.0",
-    "browserslist": "^4.14.4",
+    "browserslist": "^4.14.5",
     "commitizen": "^4.2.1",
     "cross-env": "^7.0.2",
     "eslint": "^7.9.0",
@@ -128,7 +128,11 @@
     "pretty-quick": "^3.0.2",
     "rimraf": "^3.0.2",
     "stylelint": "^13.7.1",
-    "typescript": "^4.0.3"
+    "typescript": "^4.0.3",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.4"
   },
   "engines": {
     "node": ">=12.18.3"
