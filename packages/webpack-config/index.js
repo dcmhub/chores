@@ -49,18 +49,11 @@ export default (
     optimization: {
       minimize: isProd,
       sideEffects: true,
-      splitChunks: {
-        cacheGroups: {
-          styles: {
-            chunks: 'all',
-            enforce: true,
-            name: 'styles',
-            test: /\.css$/,
-          },
-        },
-      },
       minimizer: [
-        new TerserPlugin({ parallel: true, extractComments: false }),
+        new TerserPlugin({
+          parallel: true,
+          extractComments: false,
+        }),
         new OptimizeCSSAssetsPlugin(),
       ],
     },
@@ -68,12 +61,7 @@ export default (
     resolve: {
       extensions: ['.js', '.mjs', '.ts', '.jsx', '.tsx', '.json', '.wasm'],
       mainFields: ['module', 'main'],
-      modules: [
-        SRC_DIR,
-        path.resolve(__dirname, 'node_modules'),
-        path.resolve(__dirname, '..', 'node_modules'),
-        path.resolve(__dirname, '..', '..', 'node_modules'),
-      ],
+      modules: [SRC_DIR, path.resolve(__dirname, '..', '..')],
     },
 
     module: {
@@ -192,11 +180,16 @@ export default (
 
     plugins: [
       new webpack.ProgressPlugin(),
-      new webpack.EnvironmentPlugin({ NODE_ENV: mode }),
+
+      new webpack.EnvironmentPlugin({
+        NODE_ENV: mode,
+      }),
+
       new webpack.DefinePlugin({
         PUBLIC_URL: JSON.stringify(process.env.PUBLIC_URL || '/'),
         REACT_APP_ENV: JSON.stringify(mode),
       }),
+
       new MiniCssExtractPlugin({
         filename: isProd ? '[name].min.css' : '[name].css',
         chunkFilename: isProd ? '[id].min.css' : '[id].css',
