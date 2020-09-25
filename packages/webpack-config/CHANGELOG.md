@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.7](https://github.com/dcmhub/chores/compare/v2.3.6...v2.3.7) (2020-09-25)
+
+
+### Bug Fixes
+
+* **webpack-config:** module resolve error ([b6635d5](https://github.com/dcmhub/chores/commit/b6635d51cfe7d9366ff4c93ca003ec16ce5a425f))
+
+
+
+
+
 ## [2.3.6](https://github.com/dcmhub/chores/compare/v2.3.5...v2.3.6) (2020-09-25)
 
 
