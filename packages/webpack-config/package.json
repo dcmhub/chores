@@ -1,6 +1,6 @@
 {
   "name": "@dcm/webpack-config",
-  "version": "2.3.7",
+  "version": "2.3.8",
   "private": false,
   "description": "Shareable @webpack config of @dcmhub.",
   "keywords": [
