@@ -70,32 +70,21 @@ export default (
         {
           test: /\.(jsx?|tsx?|mjs)$/,
           loader: 'babel-loader',
-          exclude: /(node_modules|codecs|\.worker\.js$)/,
+          exclude: /(node_modules|codecs)/,
           options: {
             envName: mode,
+            cacheCompression: !isProd,
             cacheDirectory: !isProd,
           },
         },
         {
           test: /\.worker\.js$/,
+          loader: 'worker-loader',
           exclude: /(node_modules|codecs)/,
-          use: [
-            {
-              loader: 'worker-loader',
-              options: {
-                inline: 'fallback',
-                esModule: ESM_ENABLED,
-              },
-            },
-            {
-              loader: 'babel-loader',
-              options: {
-                envName: mode,
-                cacheCompression: !isProd,
-                cacheDirectory: !isProd,
-              },
-            },
-          ],
+          options: {
+            inline: 'no-fallback',
+            esModule: ESM_ENABLED,
+          },
         },
         {
           test: /\.css$/,
