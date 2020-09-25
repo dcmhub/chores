@@ -70,9 +70,9 @@ export default (
       mainFields: ['module', 'main'],
       modules: [
         SRC_DIR,
-        path.join(__dirname, 'node_modules'),
-        path.join(__dirname, '..', 'node_modules'),
-        path.join(__dirname, '..', '..', 'node_modules'),
+        path.resolve(__dirname, 'node_modules'),
+        path.resolve(__dirname, '..', 'node_modules'),
+        path.resolve(__dirname, '..', '..', 'node_modules'),
       ],
     },
 
@@ -95,8 +95,8 @@ export default (
             {
               loader: 'worker-loader',
               options: {
-                inline: true,
-                fallback: false,
+                inline: 'fallback',
+                esModule: ESM_ENABLED,
               },
             },
             {

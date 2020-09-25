@@ -35,6 +35,7 @@ module.exports = {
       files: ['**/*.d.ts'],
       rules: {
         '@typescript-eslint/naming-convention': 'off',
+        '@typescript-eslint/no-misused-new': 'off',
       },
     },
     {
