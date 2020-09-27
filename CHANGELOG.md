@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/dcmhub/chores/compare/v2.4.0...v2.4.1) (2020-09-27)
+
+
+### Bug Fixes
+
+* **eslint-config:** add airbnb-base and airbnb preset ([d525197](https://github.com/dcmhub/chores/commit/d525197c9bcc665959a36d5c1e8fb778e20cdfec))
+
+
+
+
+
 # [2.4.0](https://github.com/dcmhub/chores/compare/v2.3.9...v2.4.0) (2020-09-27)
 
 
