@@ -1,3 +1,7 @@
+const { rules: baseBestPracticesRules } = require('eslint-config-airbnb-base/rules/best-practices');
+const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style');
+const { rules: baseVariablesRules } = require('eslint-config-airbnb-base/rules/variables');
+
 const extensions = ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts', '.json'];
 
 module.exports = {
@@ -42,15 +46,18 @@ module.exports = {
   rules: {
     'global-require': 'off',
     'no-bitwise': 'off',
-    'no-empty-function': 'off',
     'no-unsafe-finally': 'off',
     'no-restricted-syntax': 'off',
 
-    // Allow reassign properties of param only
+    // Disallow parameter object manipulation except for specific exclusions
     'no-param-reassign': [
       'error',
       {
-        props: false,
+        props: true,
+        ignorePropertyModificationsFor: [
+          ...baseBestPracticesRules['no-param-reassign'][1].ignorePropertyModificationsFor,
+          // You can add new exclusions here
+        ],
       },
     ],
 
@@ -75,8 +82,8 @@ module.exports = {
     'no-unused-vars': [
       'error',
       {
-        args: 'after-used',
-        ignoreRestSiblings: true,
+        ...baseVariablesRules['no-unused-vars'][1],
+        varsIgnorePattern: '^_',
         argsIgnorePattern: '^_',
       },
     ],
@@ -85,8 +92,21 @@ module.exports = {
     'new-cap': [
       'error',
       {
-        capIsNewExceptions: ['App', 'Page', 'Component', 'Behavior'],
-        capIsNewExceptionPattern: '^[A-Z][a-zA-Z0-9]*Service$',
+        newIsCap: true,
+        capIsNew: true,
+        newIsCapExceptions: [
+          ...baseStyleRules['new-cap'][1].newIsCapExceptions,
+          // You can add new exceptions here
+        ],
+        capIsNewExceptions: [
+          ...baseStyleRules['new-cap'][1].capIsNewExceptions,
+          // You can add new exceptions here
+          'App',
+          'Behavior',
+          'Component',
+          'Page',
+        ],
+        capIsNewExceptionPattern: '^[A-Z]\\S*Service$',
       },
     ],
 
@@ -96,6 +116,7 @@ module.exports = {
       {
         allowShortCircuit: true,
         allowTernary: true,
+        allowTaggedTemplates: false,
       },
     ],
 
@@ -111,6 +132,7 @@ module.exports = {
     'unicorn/no-null': 'off',
     'unicorn/no-reduce': 'off',
     'unicorn/no-unreadable-array-destructuring': 'off',
+    'unicorn/no-useless-undefined': 'off',
     'unicorn/prefer-query-selector': 'off',
     'unicorn/prevent-abbreviations': 'off',
 
@@ -126,30 +148,45 @@ module.exports = {
       {
         optionalDependencies: false,
         devDependencies: [
-          '**/scripts/**', // Scripts
-          '**/setupTests.{js,ts}', // Setup Tests
-          '**/{test,tests,__tests__}/**', // test folders
-          '**/{mock,mocks,__mocks__}/**', // mock folers
-          '**/*{.,_}{test,mock}.{js,ts,jsx,tsx}', // test and mock files
+          '**/scripts/**', // script folders
+
+          '**/setupTests.{js,ts}', // setup tests
+          '**/{tests,__tests__}/**', // test folders
+          '**/{mocks,__mocks__}/**', // mock folers
+          'test.{js,ts,jsx,tsx}', // repos with a single test file
+          'test-*.{js,ts,jsx,tsx}', // repos with multiple top-level test files
+          '**/*{.,_}{test,mock,spec}.{js,ts,jsx,tsx}', // test and mock files
+
           '**/jest.config.{js,ts}', // jest config
-          '**/jest-puppeteer.config.{js,ts}', // jest config
+          '**/jest.setup.{js,ts}', // jest setup
+          '**/jest-puppeteer.config.{js,ts}', // jest puppeteer config
+
           '**/vue.config.{js,ts}', // vue-cli config
+
           '**/.webpack/*.{js,ts}', // webpack config
           '**/webpack.config.{js,ts}', // webpack config
           '**/webpack.config.*.{js,ts}', // webpack config
+
           '**/rollup.config.{js,ts}', // rollup config
           '**/rollup.config.*.{js,ts}', // rollup config
+
           '**/babel.config.{js,ts}', // babel config
           '**/.babelrc.{js,ts}', // babel config
+
           '**/prettier.config.{js,ts}', // prettier config
           '**/.prettierrc.{js,ts}', // prettier config
+
           '**/.stylelintrc.{js,ts}', // stylelint config
           '**/stylelint.config.{js,ts}', // stylelint config
+
           '**/.eslintrc.{js,ts}', // eslint config
+
           '**/postcss.config.{js,ts}', // postcss config
           '**/.postcssrc.{js,ts}', // postcss config
+
           '**/next.config.{js,ts}', // next.js config
           '**/server.{js,ts}', // next.js server config
+
           '**/.umirc.{js,ts}', // umi.js config
           '**/.umirc.*.{js,ts}', // umi.js config
           '**/config/*.{js,ts}', // umi.js config

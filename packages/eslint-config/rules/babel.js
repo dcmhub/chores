@@ -1,3 +1,8 @@
+const { rules: baseBestPracticesRules } = require('eslint-config-airbnb-base/rules/best-practices');
+const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style');
+
+const { rules: baseUserRules } = require('./base');
+
 module.exports = {
   plugins: ['@babel'],
 
@@ -8,26 +13,11 @@ module.exports = {
     'new-cap': 'off',
     'no-unused-expressions': 'off',
 
-    '@babel/no-invalid-this': 'error',
-    '@babel/object-curly-spacing': ['error', 'always'],
-    '@babel/semi': 'error',
-
-    // Exceptions for wechat miniprogram
-    '@babel/new-cap': [
-      'error',
-      {
-        capIsNewExceptions: ['App', 'Page', 'Component', 'Behavior'],
-      },
-    ],
-
-    // Allow short circuit and ternary expressions
-    '@babel/no-unused-expressions': [
-      'error',
-      {
-        allowShortCircuit: true,
-        allowTernary: true,
-      },
-    ],
+    '@babel/no-invalid-this': baseBestPracticesRules['no-invalid-this'],
+    '@babel/object-curly-spacing': baseStyleRules['object-curly-spacing'],
+    '@babel/semi': baseStyleRules.semi,
+    '@babel/new-cap': baseUserRules['new-cap'],
+    '@babel/no-unused-expressions': baseUserRules['no-unused-expressions'],
   },
 
   settings: {
