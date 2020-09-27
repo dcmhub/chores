@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/dcmhub/chores/compare/v2.3.9...v2.4.0) (2020-09-27)
+
+
+### Bug Fixes
+
+* **eslint-config:** remove eslint-config-airbnb-typescript ([92b4467](https://github.com/dcmhub/chores/commit/92b44679f7c3a545e720e101d6a55539410d6407))
+
+
+
+
+
 ## [2.3.9](https://github.com/dcmhub/chores/compare/v2.3.8...v2.3.9) (2020-09-27)
 
 **Note:** Version bump only for package @dcm/chores
