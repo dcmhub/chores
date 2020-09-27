@@ -47,7 +47,7 @@
   },
   "peerDependencies": {
     "prettier": "^2.1.2",
-    "stylelint": "^13.7.1"
+    "stylelint": "^13.7.2"
   },
   "engines": {
     "node": ">=12.18.3"
