@@ -16,8 +16,6 @@ module.exports = {
   },
 
   extends: [
-    'airbnb-typescript',
-
     require.resolve('./rules/base.js'),
     require.resolve('./rules/react.js'),
     require.resolve('./rules/typescript.js'),
