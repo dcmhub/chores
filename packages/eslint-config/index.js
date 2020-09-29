@@ -34,7 +34,6 @@ module.exports = {
       // Turn off naming-convention rule for '.d.ts' files
       files: ['**/*.d.ts'],
       rules: {
-        '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/no-misused-new': 'off',
       },
     },
