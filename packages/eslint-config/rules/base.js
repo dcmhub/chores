@@ -57,6 +57,10 @@ module.exports = {
         ignorePropertyModificationsFor: [
           ...baseBestPracticesRules['no-param-reassign'][1].ignorePropertyModificationsFor,
           // You can add new exclusions here
+          'v', // for map or filter value shortcut
+          'r', // for table record shortcut
+          'value', // for map or filter value
+          'record', // for table record
         ],
       },
     ],
