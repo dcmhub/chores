@@ -61,6 +61,7 @@ module.exports = {
           'r', // for table record shortcut
           'value', // for map or filter value
           'record', // for table record
+          'draft', // for immer draft
         ],
       },
     ],

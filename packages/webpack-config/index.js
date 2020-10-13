@@ -92,12 +92,7 @@ export default (
             {
               loader: MiniCssExtractPlugin.loader,
               options: {
-                hmr: !isProd,
-                reloadAll: true,
                 esModule: ESM_ENABLED,
-                modules: {
-                  namedExport: ESM_ENABLED,
-                },
               },
             },
             {
@@ -106,7 +101,6 @@ export default (
                 importLoaders: 1,
                 esModule: ESM_ENABLED,
                 modules: {
-                  namedExport: ESM_ENABLED,
                   localIdentName: isProd ? '[hash:base64:8]' : '[path]_[name]__[local]',
                 },
               },
