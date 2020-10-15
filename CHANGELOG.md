@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.7](https://github.com/dcmhub/chores/compare/v2.4.6...v2.4.7) (2020-10-15)
+
+
+### Bug Fixes
+
+* **webpack-config:** remove node object from webpack config ([0b0dfd3](https://github.com/dcmhub/chores/commit/0b0dfd3c2db0cbdc3e0fa519961e1ccbfa0935b8))
+
+
+
+
+
 ## [2.4.6](https://github.com/dcmhub/chores/compare/v2.4.5...v2.4.6) (2020-10-15)
 
 **Note:** Version bump only for package @dcm/chores
