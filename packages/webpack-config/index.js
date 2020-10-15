@@ -1,11 +1,11 @@
-import path from 'path';
+const path = require('path');
 
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
-import TerserPlugin from 'terser-webpack-plugin';
-import webpack from 'webpack';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const webpack = require('webpack');
 
-export default (
+module.exports = (
   env,
   argv,
   {

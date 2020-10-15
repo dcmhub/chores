@@ -37,7 +37,7 @@
   ],
   "dependencies": {
     "babel-loader": "^8.1.0",
-    "css-loader": "^4.3.0",
+    "css-loader": "^5.0.0",
     "exports-loader": "^1.1.1",
     "file-loader": "^6.1.1",
     "mini-css-extract-plugin": "^1.0.0",
@@ -45,9 +45,9 @@
     "postcss": "^8.1.1",
     "postcss-loader": "^4.0.4",
     "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^4.2.3",
+    "terser-webpack-plugin": "^5.0.0",
     "url-loader": "^4.1.1",
-    "webpack": "^5.0.0",
+    "webpack": "^5.1.0",
     "worker-loader": "^3.0.4"
   },
   "peerDependencies": {
