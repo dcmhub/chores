@@ -178,10 +178,6 @@ module.exports = (
         chunkFilename: isProd ? '[id].min.css' : '[id].css',
       }),
     ],
-
-    node: {
-      fs: 'empty',
-    },
   };
 
   return webpackConfig;
