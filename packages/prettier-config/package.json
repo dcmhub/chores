@@ -1,6 +1,6 @@
 {
   "name": "@dcm/prettier-config",
-  "version": "2.3.0",
+  "version": "2.4.9",
   "private": false,
   "description": "Shareable @prettier config of @dcmhub.",
   "keywords": [

@@ -1,6 +1,6 @@
 {
   "name": "@dcm/tsconfig",
-  "version": "2.3.0",
+  "version": "2.4.9",
   "private": false,
   "description": "Shareable tsconfig.json file of @dcmhub.",
   "keywords": [
