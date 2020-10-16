@@ -41,19 +41,17 @@
     "exports-loader": "^1.1.1",
     "file-loader": "^6.1.1",
     "mini-css-extract-plugin": "^1.0.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss": "^8.1.1",
     "postcss-loader": "^4.0.4",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.0.0",
     "url-loader": "^4.1.1",
-    "webpack": "^5.1.0",
+    "webpack": "^5.1.2",
     "worker-loader": "^3.0.4"
   },
   "peerDependencies": {
     "@babel/core": "^7.11.6",
-    "webpack-cli": "^4.0.0",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-cli": "^4.0.0"
   },
   "engines": {
     "node": ">=12.18.3"

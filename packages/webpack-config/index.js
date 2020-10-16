@@ -1,7 +1,6 @@
 const path = require('path');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 
@@ -54,7 +53,6 @@ module.exports = (
           parallel: true,
           extractComments: false,
         }),
-        new OptimizeCSSAssetsPlugin(),
       ],
     },
 
