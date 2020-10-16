@@ -41,7 +41,7 @@
     "postcss-preset-env": "^6.7.0"
   },
   "engines": {
-    "node": ">=12.18.3"
+    "node": ">=12.19.0"
   },
   "publishConfig": {
     "access": "public",
