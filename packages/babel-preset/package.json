@@ -64,7 +64,7 @@
     "@babel/cli": "^7.12.1"
   },
   "peerDependencies": {
-    "@babel/core": "^7.12.1",
+    "@babel/core": "^7.12.3",
     "@babel/runtime": "^7.12.1",
     "core-js": "^3.6.5"
   },
