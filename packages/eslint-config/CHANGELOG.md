@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.12](https://github.com/dcmhub/chores/compare/v2.4.11...v2.4.12) (2020-10-22)
+
+
+### Features
+
+* **eslint-config:** ignore model and publicAPI for no-param-reassign rule ([e075458](https://github.com/dcmhub/chores/commit/e075458df39fefd617b4c40b9848c8400e32d320))
+
+
+
+
+
 ## [2.4.11](https://github.com/dcmhub/chores/compare/v2.4.10...v2.4.11) (2020-10-21)
 
 **Note:** Version bump only for package @dcm/eslint-config
