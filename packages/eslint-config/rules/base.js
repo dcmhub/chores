@@ -56,12 +56,15 @@ module.exports = {
         props: true,
         ignorePropertyModificationsFor: [
           ...baseBestPracticesRules['no-param-reassign'][1].ignorePropertyModificationsFor,
+
           // You can add new exclusions here
           'v', // for map or filter value shortcut
-          'r', // for table record shortcut
           'value', // for map or filter value
+          'r', // for table record shortcut
           'record', // for table record
           'draft', // for immer draft
+          'model', // for vtk.js
+          'publicAPI', // for vtk.js
         ],
       },
     ],
@@ -132,6 +135,7 @@ module.exports = {
     'jsdoc/no-undefined-types': 'off',
 
     // Turn off some unicorn rules
+    'unicorn/explicit-length-check': 'off',
     'unicorn/filename-case': 'off',
     'unicorn/no-fn-reference-in-iterator': 'off',
     'unicorn/no-null': 'off',
@@ -139,6 +143,7 @@ module.exports = {
     'unicorn/no-unreadable-array-destructuring': 'off',
     'unicorn/no-useless-undefined': 'off',
     'unicorn/prefer-query-selector': 'off',
+    'unicorn/prefer-ternary': 'off',
     'unicorn/prevent-abbreviations': 'off',
 
     // Turn off some import rules

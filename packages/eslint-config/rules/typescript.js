@@ -139,10 +139,25 @@ module.exports = {
       },
     ],
 
+    // Allows "Function" type, autofix "Object" type
+    '@typescript-eslint/ban-types': [
+      'error',
+      {
+        types: {
+          Function: false,
+          Object: {
+            message: 'Use record instead',
+            fixWith: 'Record<string, any>',
+          },
+        },
+      },
+    ],
+
     // Turn off some typescript rules
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-var-requires': 'off',
@@ -152,6 +167,7 @@ module.exports = {
     '@typescript-eslint/no-unsafe-call': 'off',
     '@typescript-eslint/no-unsafe-return': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/restrict-plus-operands': 'off',
     '@typescript-eslint/restrict-template-expressions': 'off',
     '@typescript-eslint/unbound-method': 'off',
   },
