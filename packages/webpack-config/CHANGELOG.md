@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.13](https://github.com/dcmhub/chores/compare/v2.4.12...v2.4.13) (2020-11-02)
+
+**Note:** Version bump only for package @dcm/webpack-config
+
+
+
+
+
 ## [2.4.11](https://github.com/dcmhub/chores/compare/v2.4.10...v2.4.11) (2020-10-21)
 
 **Note:** Version bump only for package @dcm/webpack-config
