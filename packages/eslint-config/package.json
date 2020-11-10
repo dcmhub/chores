@@ -1,6 +1,6 @@
 {
   "name": "@dcm/eslint-config",
-  "version": "2.4.13",
+  "version": "2.4.14",
   "private": false,
   "description": "Shareable @eslint config of @dcmhub.",
   "keywords": [
