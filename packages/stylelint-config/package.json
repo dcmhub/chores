@@ -47,10 +47,10 @@
   },
   "peerDependencies": {
     "prettier": "^2.1.2",
-    "stylelint": "^13.7.2"
+    "stylelint": "^13.8.0"
   },
   "engines": {
-    "node": ">=14.15.0"
+    "node": ">=14.15.1"
   },
   "publishConfig": {
     "access": "public",

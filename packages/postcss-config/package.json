@@ -41,10 +41,10 @@
     "postcss-preset-env": "^6.7.0"
   },
   "peerDependencies": {
-    "postcss": "^8.1.4"
+    "postcss": "^8.1.7"
   },
   "engines": {
-    "node": ">=14.15.0"
+    "node": ">=14.15.1"
   },
   "publishConfig": {
     "access": "public",
