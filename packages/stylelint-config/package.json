@@ -1,6 +1,6 @@
 {
   "name": "@dcm/stylelint-config",
-  "version": "2.4.13",
+  "version": "2.4.15",
   "private": false,
   "description": "Shareable @stylelint config of @dcmhub.",
   "keywords": [
