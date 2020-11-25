@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.17](https://github.com/dcmhub/chores/compare/v2.4.16...v2.4.17) (2020-11-25)
+
+
+### Features
+
+* **eslint-config:** add workbox as globals ([8dfff30](https://github.com/dcmhub/chores/commit/8dfff30908bef009b65c1b775dd887ad952620c7))
+
+
+
+
+
 ## [2.4.16](https://github.com/dcmhub/chores/compare/v2.4.15...v2.4.16) (2020-11-25)
 
 
