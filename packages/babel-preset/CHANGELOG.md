@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.18](https://github.com/dcmhub/chores/compare/v2.4.17...v2.4.18) (2020-11-25)
+
+
+### Features
+
+* **webpack-config:** add top level await syntax support ([188aa90](https://github.com/dcmhub/chores/commit/188aa90d3ad04688971cb58ef4cc695284e45d96))
+
+
+
+
+
 ## [2.4.16](https://github.com/dcmhub/chores/compare/v2.4.15...v2.4.16) (2020-11-25)
 
 
