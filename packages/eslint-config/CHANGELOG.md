@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.19](https://github.com/dcmhub/chores/compare/v2.4.18...v2.4.19) (2020-11-25)
+
+
+### Features
+
+* **webpack-config:** support webpack 5 experiments options ([1f34d30](https://github.com/dcmhub/chores/commit/1f34d309061e4209862b267881316e71a412b9b9))
+
+
+
+
+
 ## [2.4.17](https://github.com/dcmhub/chores/compare/v2.4.16...v2.4.17) (2020-11-25)
 
 
