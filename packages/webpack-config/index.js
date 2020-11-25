@@ -11,9 +11,12 @@ module.exports = (
     NAME = 'index',
     MAIN = 'index.js',
     ENTRY,
+    TARGET = 'web',
+    LIBRARY_TARGET = 'umd',
     SRC_DIR,
     DIST_DIR,
     CODECS_DIR,
+    DEVTOOL,
     PUBLIC_PATH = process.env.PUBLIC_URL || '/',
     EXTERNALS = {},
     ESM_ENABLED = true,
@@ -25,10 +28,10 @@ module.exports = (
 
   const webpackConfig = {
     mode,
-    target: 'web',
+    target: TARGET,
     cache: true,
     context: SRC_DIR,
-    devtool: isProd ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: DEVTOOL ?? isProd ? 'source-map' : 'cheap-module-eval-source-map',
     externals: EXTERNALS,
 
     entry: ENTRY || {
@@ -38,8 +41,8 @@ module.exports = (
     output: {
       path: DIST_DIR,
       library: '[name]',
-      libraryTarget: 'umd',
-      umdNamedDefine: true,
+      libraryTarget: LIBRARY_TARGET,
+      umdNamedDefine: LIBRARY_TARGET === 'umd',
       filename: isProd ? '[name].min.js' : '[name].js',
       publicPath: isProd ? PUBLIC_PATH : '',
       pathinfo: !isProd,
