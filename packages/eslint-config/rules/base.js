@@ -88,6 +88,14 @@ module.exports = {
       },
     ],
 
+    // Allow empty catch
+    'no-empty': [
+      'error',
+      {
+        allowEmptyCatch: true,
+      },
+    ],
+
     // Unused variables rule
     'no-unused-vars': [
       'error',

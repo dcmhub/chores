@@ -179,6 +179,11 @@ module.exports = (
         chunkFilename: isProd ? '[id].min.css' : '[id].css',
       }),
     ],
+
+    experiments: {
+      asyncWebAssembly: true,
+      topLevelAwait: true,
+    },
   };
 
   return webpackConfig;
