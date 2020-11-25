@@ -26,6 +26,8 @@ module.exports = {
   },
 
   globals: {
+    workbox: true,
+
     // Global variables for wechat miniprogram
     wx: true,
     App: true,
