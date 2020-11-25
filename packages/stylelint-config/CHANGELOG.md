@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.16](https://github.com/dcmhub/chores/compare/v2.4.15...v2.4.16) (2020-11-25)
+
+
+### Features
+
+* **webpack-config:** add more options for webpack config ([b6386c1](https://github.com/dcmhub/chores/commit/b6386c136f92b54f8182be5290582f6505e1acd3))
+
+
+
+
+
 ## [2.4.15](https://github.com/dcmhub/chores/compare/v2.4.14...v2.4.15) (2020-11-18)
 
 **Note:** Version bump only for package @dcm/stylelint-config
