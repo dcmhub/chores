@@ -55,13 +55,14 @@ module.exports = declare((api, options = {}) => {
 
   // Initial babel plugins
   const plugins = [
-    [require('@babel/plugin-proposal-decorators').default, { decoratorsBeforeExport: true }],
+    [require('@babel/plugin-proposal-decorators').default, { legacy: true }],
     [require('@babel/plugin-proposal-class-properties').default, { loose: true }],
     [require('@babel/plugin-proposal-logical-assignment-operators').default, {}],
     [require('@babel/plugin-proposal-nullish-coalescing-operator').default, { loose: true }],
     [require('@babel/plugin-proposal-numeric-separator').default, {}],
     [require('@babel/plugin-proposal-optional-chaining').default, { loose: true }],
     [require('@babel/plugin-proposal-private-methods').default, { loose: true }],
+    [require('@babel/plugin-syntax-top-level-await').default],
   ];
 
   // Add transform runtime plugin
