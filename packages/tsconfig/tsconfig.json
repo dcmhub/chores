@@ -11,7 +11,7 @@
     "importHelpers": false,
     "incremental": true,
     "isolatedModules": false,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": ["ESNext", "DOM"],
     "module": "ESNext",
     "noEmit": true,
