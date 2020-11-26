@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.21](https://github.com/dcmhub/chores/compare/v2.4.20...v2.4.21) (2020-11-26)
+
+
+### Reverts
+
+* **eslint-config:** react rules ([ee9f3e0](https://github.com/dcmhub/chores/commit/ee9f3e0fbaf8f051b9434ed7e6b766e5b8f71a27))
+
+
+
+
+
 ## [2.4.20](https://github.com/dcmhub/chores/compare/v2.4.19...v2.4.20) (2020-11-26)
 
 
