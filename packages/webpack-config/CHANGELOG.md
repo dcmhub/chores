@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.20](https://github.com/dcmhub/chores/compare/v2.4.19...v2.4.20) (2020-11-26)
+
+
+### Features
+
+* **tsconfig:** support react 17 jsx transform ([8328cc1](https://github.com/dcmhub/chores/commit/8328cc1ec31a5b9962d2f90096487393a9fef56d))
+
+
+
+
+
 ## [2.4.19](https://github.com/dcmhub/chores/compare/v2.4.18...v2.4.19) (2020-11-25)
 
 
