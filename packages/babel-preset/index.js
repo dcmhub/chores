@@ -6,34 +6,35 @@ module.exports = declare((api, options = {}) => {
   const env = api.env();
   const isDev = env === 'development';
 
-  api.assertVersion('^7.0.0');
+  api.assertVersion('^7.10.0');
   api.cache.using(() => isDev);
 
   const {
-    debug = false,
     targets = {},
-    modules = false,
-    useBuiltIns = 'usage',
-    useESModules = !modules,
+    modules = 'auto',
+    debug = false,
+    include,
     exclude,
+    useBuiltIns = false,
+    useESModules = !modules,
     react = false,
     typescript = false,
-    alias = false,
     transformRuntime = true,
+    alias = false,
   } = options;
 
   // Initial babel presets
   const presets = [
     [
-      require('@babel/preset-env'),
+      require('@babel/preset-env').default,
       {
-        debug,
         targets,
-        modules,
-        useBuiltIns,
-        corejs: 3,
         bugfixes: true,
-        browserslistEnv: env ?? 'production',
+        spec: false,
+        loose: false,
+        modules,
+        debug,
+        include: Array.isArray(include) ? include : [],
         exclude: Array.isArray(exclude)
           ? exclude
           : [
@@ -49,6 +50,12 @@ module.exports = declare((api, options = {}) => {
               'transform-typeof-symbol',
               'transform-unicode-regex',
             ],
+        useBuiltIns,
+        corejs: 3,
+        forceAllTransforms: false,
+        ignoreBrowserslistConfig: false,
+        browserslistEnv: env ?? 'production',
+        shippedProposals: false,
       },
     ],
   ];
@@ -65,49 +72,14 @@ module.exports = declare((api, options = {}) => {
     [require('@babel/plugin-syntax-top-level-await').default],
   ];
 
-  // Add transform runtime plugin
-  if (transformRuntime) {
-    plugins.push([
-      require('@babel/plugin-transform-runtime'),
-      {
-        useESModules,
-        version: require('@babel/runtime/package.json').version,
-        absoluteRuntime: path.dirname(require.resolve('@babel/runtime/package.json')),
-      },
-    ]);
-  }
-
-  // Support path alias with babel
-  if (alias) {
-    plugins.push([
-      require('babel-plugin-module-resolver').default,
-      {
-        root: ['.'],
-        alias: {
-          '@/assets': './src/assets',
-          '@/components': './src/components',
-          '@/constants': './src/constants',
-          '@/defaultSettings': './src/defaultSettings',
-          '@/interfaces': './src/interfaces',
-          '@/layouts': './src/layouts',
-          '@/locales': './src/locales',
-          '@/models': './src/models',
-          '@/pages': './src/pages',
-          '@/services': './src/services',
-          '@/utils': './src/utils',
-        },
-      },
-    ]);
-  }
-
   // Add react preset and plugins
   if (react) {
     presets.push([
       require('@babel/preset-react').default,
       {
-        development: isDev,
         runtime: 'automatic',
-        useBuiltIns: true,
+        development: isDev,
+        importSource: isDev ? '@welldone-software/why-did-you-render' : 'react',
       },
     ]);
 
@@ -132,6 +104,45 @@ module.exports = declare((api, options = {}) => {
         allExtensions: react,
         allowNamespaces: true,
         allowDeclareFields: true,
+        onlyRemoveTypeImports: true,
+      },
+    ]);
+  }
+
+  // Add transform runtime plugin
+  if (transformRuntime) {
+    plugins.push([
+      require('@babel/plugin-transform-runtime').default,
+      {
+        corejs: false,
+        helpers: true,
+        regenerator: true,
+        useESModules,
+        absoluteRuntime: path.dirname(require.resolve('@babel/runtime/package.json')),
+        version: require('@babel/runtime/package.json').version,
+      },
+    ]);
+  }
+
+  // Support path alias with babel
+  if (alias) {
+    plugins.push([
+      require('babel-plugin-module-resolver').default,
+      {
+        root: ['.'],
+        alias: {
+          '@/assets': './src/assets',
+          '@/components': './src/components',
+          '@/constants': './src/constants',
+          '@/defaultSettings': './src/defaultSettings',
+          '@/interfaces': './src/interfaces',
+          '@/layouts': './src/layouts',
+          '@/locales': './src/locales',
+          '@/models': './src/models',
+          '@/pages': './src/pages',
+          '@/services': './src/services',
+          '@/utils': './src/utils',
+        },
       },
     ]);
   }
