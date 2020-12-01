@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.23](https://github.com/dcmhub/chores/compare/v2.4.22...v2.4.23) (2020-12-01)
+
+
+### Bug Fixes
+
+* **babel-preset:** remove corejs option ([4d475bd](https://github.com/dcmhub/chores/commit/4d475bd20afe754bfdb8b2b953e1bc72a6a7ff50))
+
+
+
+
+
 ## [2.4.22](https://github.com/dcmhub/chores/compare/v2.4.21...v2.4.22) (2020-12-01)
 
 
