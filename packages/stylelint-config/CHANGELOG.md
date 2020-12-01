@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.22](https://github.com/dcmhub/chores/compare/v2.4.21...v2.4.22) (2020-12-01)
+
+
+### Features
+
+* **babel-preset:** support why-did-you-render in development ([2c7dd9e](https://github.com/dcmhub/chores/commit/2c7dd9efe6fb051da9cbe1790b488a8f482b9fb1))
+
+
+
+
+
 ## [2.4.16](https://github.com/dcmhub/chores/compare/v2.4.15...v2.4.16) (2020-11-25)
 
 
