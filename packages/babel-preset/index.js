@@ -51,7 +51,6 @@ module.exports = declare((api, options = {}) => {
               'transform-unicode-regex',
             ],
         useBuiltIns,
-        corejs: 3,
         forceAllTransforms: false,
         ignoreBrowserslistConfig: false,
         browserslistEnv: env ?? 'production',
