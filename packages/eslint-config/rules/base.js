@@ -101,7 +101,7 @@ module.exports = {
       'error',
       {
         ...baseVariablesRules['no-unused-vars'][1],
-        varsIgnorePattern: '^_',
+        varsIgnorePattern: '^[A-Z_]',
         argsIgnorePattern: '^_',
       },
     ],
