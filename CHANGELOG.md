@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.25](https://github.com/dcmhub/chores/compare/v2.4.24...v2.4.25) (2020-12-02)
+
+
+### Features
+
+* **eslint-config:** support global variables with double underscore ([2821e8a](https://github.com/dcmhub/chores/commit/2821e8aa0abb6dc1412cd034790c8ac55484d8e8))
+
+
+
+
+
 ## [2.4.24](https://github.com/dcmhub/chores/compare/v2.4.23...v2.4.24) (2020-12-02)
 
 
