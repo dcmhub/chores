@@ -30,7 +30,8 @@ module.exports = {
       {
         selector: 'default',
         format: ['camelCase', 'PascalCase', 'UPPER_CASE', 'snake_case'],
-        leadingUnderscore: 'allow',
+        leadingUnderscore: 'allowSingleOrDouble',
+        trailingUnderscore: 'allowSingleOrDouble',
       },
       {
         selector: 'typeLike',

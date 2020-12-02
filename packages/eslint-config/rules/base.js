@@ -106,6 +106,14 @@ module.exports = {
       },
     ],
 
+    // Allow global variables
+    'no-underscore-dangle': [
+      'error',
+      {
+        allow: ['__VERSION__', '__BUILD_TIME__'],
+      },
+    ],
+
     // Exceptions for wechat miniprogram
     'new-cap': [
       'error',
