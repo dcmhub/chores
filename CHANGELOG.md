@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.24](https://github.com/dcmhub/chores/compare/v2.4.23...v2.4.24) (2020-12-02)
+
+
+### Bug Fixes
+
+* **eslint-config:** update no-unused-vars rule, ignore typescript global declare ([3c6550b](https://github.com/dcmhub/chores/commit/3c6550b94e7bcd263a35615fe70da7211ab0b9e6))
+
+
+
+
+
 ## [2.4.23](https://github.com/dcmhub/chores/compare/v2.4.22...v2.4.23) (2020-12-01)
 
 
