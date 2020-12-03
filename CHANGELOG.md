@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.26](https://github.com/dcmhub/chores/compare/v2.4.25...v2.4.26) (2020-12-03)
+
+**Note:** Version bump only for package @dcm/chores
+
+
+
+
+
 ## [2.4.25](https://github.com/dcmhub/chores/compare/v2.4.24...v2.4.25) (2020-12-02)
 
 
