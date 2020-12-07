@@ -60,6 +60,7 @@ module.exports = (
     },
 
     resolve: {
+      alias: {},
       extensions: ['.js', '.mjs', '.ts', '.jsx', '.tsx', '.json', '.wasm'],
       mainFields: ['module', 'main'],
       modules: [SRC_DIR, path.resolve(__dirname, '..', '..')],
