@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.29](https://github.com/dcmhub/chores/compare/v2.4.28...v2.4.29) (2020-12-08)
+
+
+### Features
+
+* **eslint-config:** add sort keys fix plugin ([b47ba6f](https://github.com/dcmhub/chores/commit/b47ba6f0bd658929e37bd478c589f78aa17f9ac8))
+
+
+
+
+
 ## [2.4.28](https://github.com/dcmhub/chores/compare/v2.4.27...v2.4.28) (2020-12-08)
 
 **Note:** Version bump only for package @dcm/eslint-config
