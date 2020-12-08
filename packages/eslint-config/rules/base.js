@@ -15,7 +15,7 @@ module.exports = {
     'plugin:compat/recommended',
   ],
 
-  plugins: ['import', 'html'],
+  plugins: ['import', 'html', 'sort-keys-fix'],
 
   env: {
     browser: true,
