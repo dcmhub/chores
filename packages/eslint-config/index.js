@@ -31,7 +31,7 @@ module.exports = {
       extends: [require.resolve('./ts-react.js')],
     },
     {
-      // Turn off naming-convention rule for '.d.ts' files
+      // Turn off some rules for '.d.ts' files
       files: ['**/*.d.ts'],
       rules: {
         '@typescript-eslint/no-misused-new': 'off',

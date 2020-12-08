@@ -40,9 +40,6 @@ module.exports = {
     getCurrentPages: true,
     definePlugin: true,
     requirePlugin: true,
-
-    // Global variables for react app
-    REACT_APP_ENV: true,
   },
 
   rules: {
@@ -106,7 +103,7 @@ module.exports = {
       },
     ],
 
-    // Allow global variables
+    // Allow some global variables
     'no-underscore-dangle': [
       'error',
       {
@@ -149,7 +146,7 @@ module.exports = {
     // Turn off some promise rules
     'promise/always-return': 'off',
 
-    // Turn off jsdoc rule
+    // Turn off some jsdoc rule
     'jsdoc/no-undefined-types': 'off',
 
     // Turn off some unicorn rules
