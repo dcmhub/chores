@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.31](https://github.com/dcmhub/chores/compare/v2.4.30...v2.4.31) (2020-12-14)
+
+**Note:** Version bump only for package @dcm/eslint-config
+
+
+
+
+
 ## [2.4.29](https://github.com/dcmhub/chores/compare/v2.4.28...v2.4.29) (2020-12-08)
 
 
