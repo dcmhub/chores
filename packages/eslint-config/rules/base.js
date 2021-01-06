@@ -150,11 +150,10 @@ module.exports = {
     'jsdoc/no-undefined-types': 'off',
 
     // Turn off some unicorn rules
-    'unicorn/explicit-length-check': 'off',
     'unicorn/filename-case': 'off',
-    'unicorn/no-fn-reference-in-iterator': 'off',
+    'unicorn/no-array-callback-reference': 'off',
     'unicorn/no-null': 'off',
-    'unicorn/no-reduce': 'off',
+    'unicorn/no-array-reduce': 'off',
     'unicorn/no-unreadable-array-destructuring': 'off',
     'unicorn/no-useless-undefined': 'off',
     'unicorn/prefer-query-selector': 'off',
