@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/dcmhub/chores/compare/v2.4.32...v2.5.0) (2021-01-06)
+
+
+### Bug Fixes
+
+* **postcss-config:** replace esm export with commonjs module.exports ([86a355b](https://github.com/dcmhub/chores/commit/86a355be967589923a5acb20e30e066133e36da5))
+
+
+
+
+
 ## [2.4.32](https://github.com/dcmhub/chores/compare/v2.4.31...v2.4.32) (2020-12-26)
 
 **Note:** Version bump only for package @dcm/webpack-config
