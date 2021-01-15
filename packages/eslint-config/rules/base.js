@@ -107,7 +107,7 @@ module.exports = {
     'no-underscore-dangle': [
       'error',
       {
-        allow: ['__VERSION__', '__BUILD_TIME__'],
+        allow: ['__VERSION__', '__BUILD_TIME__', '__COS_DOMAIN__', '__COS_DICOM_DOMAIN__'],
       },
     ],
 
