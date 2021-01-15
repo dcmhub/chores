@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.1](https://github.com/dcmhub/chores/compare/v2.5.0...v2.5.1) (2021-01-15)
+
+
+### Bug Fixes
+
+* **eslint-config:** add allow items for no-underscore-dangle rule ([bc71662](https://github.com/dcmhub/chores/commit/bc71662d0edbf938dbae1199d6adc23c2903cd87))
+
+
+
+
+
 # [2.5.0](https://github.com/dcmhub/chores/compare/v2.4.32...v2.5.0) (2021-01-06)
 
 
