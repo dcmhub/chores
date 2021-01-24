@@ -143,6 +143,14 @@ module.exports = {
       },
     ],
 
+    // Allow implicit return
+    'array-callback-return': [
+      'error',
+      {
+        allowImplicit: true,
+      },
+    ],
+
     // Turn off some promise rules
     'promise/always-return': 'off',
 
@@ -154,10 +162,7 @@ module.exports = {
     'unicorn/no-array-callback-reference': 'off',
     'unicorn/no-null': 'off',
     'unicorn/no-array-reduce': 'off',
-    'unicorn/no-unreadable-array-destructuring': 'off',
-    'unicorn/no-useless-undefined': 'off',
-    'unicorn/prefer-query-selector': 'off',
-    'unicorn/prefer-ternary': 'off',
+    'unicorn/prefer-spread': 'off',
     'unicorn/prevent-abbreviations': 'off',
 
     // Turn off some import rules

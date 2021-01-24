@@ -83,14 +83,16 @@ module.exports = declare((api, options = {}) => {
     ]);
 
     if (!isDev) {
-      plugins.push([require('@babel/plugin-transform-react-constant-elements').default, {}]);
-      plugins.push([require('@babel/plugin-transform-react-inline-elements').default, {}]);
-      plugins.push([
-        require('babel-plugin-transform-react-remove-prop-types').default,
-        {
-          removeImport: true,
-        },
-      ]);
+      plugins.push(
+        [require('@babel/plugin-transform-react-constant-elements').default, {}],
+        [require('@babel/plugin-transform-react-inline-elements').default, {}],
+        [
+          require('babel-plugin-transform-react-remove-prop-types').default,
+          {
+            removeImport: true,
+          },
+        ],
+      );
     }
   }
 
