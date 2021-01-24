@@ -1,6 +1,6 @@
 {
   "name": "@dcm/babel-preset",
-  "version": "2.5.0",
+  "version": "2.5.2",
   "private": false,
   "description": "Shareable @babel preset of @dcmhub.",
   "keywords": [

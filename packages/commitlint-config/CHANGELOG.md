@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.2](https://github.com/dcmhub/chores/compare/v2.5.1...v2.5.2) (2021-01-24)
+
+**Note:** Version bump only for package @dcm/commitlint-config
+
+
+
+
+
 # [2.5.0](https://github.com/dcmhub/chores/compare/v2.4.32...v2.5.0) (2021-01-06)
 
 
