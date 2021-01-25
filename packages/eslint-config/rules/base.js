@@ -160,8 +160,9 @@ module.exports = {
     // Turn off some unicorn rules
     'unicorn/filename-case': 'off',
     'unicorn/no-array-callback-reference': 'off',
-    'unicorn/no-null': 'off',
     'unicorn/no-array-reduce': 'off',
+    'unicorn/no-null': 'off',
+    'unicorn/no-useless-undefined': 'off',
     'unicorn/prefer-spread': 'off',
     'unicorn/prevent-abbreviations': 'off',
 
