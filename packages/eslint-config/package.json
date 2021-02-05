@@ -44,10 +44,10 @@
     "ts-react.js"
   ],
   "dependencies": {
-    "@babel/eslint-parser": "^7.12.1",
-    "@babel/eslint-plugin": "^7.12.1",
-    "@typescript-eslint/eslint-plugin": "^4.14.0",
-    "@typescript-eslint/parser": "^4.14.0",
+    "@babel/eslint-parser": "^7.12.13",
+    "@babel/eslint-plugin": "^7.12.13",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^7.2.0",
@@ -58,7 +58,7 @@
     "eslint-plugin-html": "^6.1.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.1.3",
-    "eslint-plugin-jsdoc": "^31.2.2",
+    "eslint-plugin-jsdoc": "^31.6.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-promise": "^4.2.1",
@@ -68,10 +68,10 @@
     "eslint-plugin-unicorn": "^27.0.0"
   },
   "peerDependencies": {
-    "@babel/core": "^7.12.10",
+    "@babel/core": "^7.12.13",
     "@dcm/babel-preset": "^2.1.0",
     "babel-plugin-module-resolver": "^4.1.0",
-    "eslint": "^7.18.0",
+    "eslint": "^7.19.0",
     "prettier": "^2.2.1",
     "typescript": "^4.1.3"
   },
