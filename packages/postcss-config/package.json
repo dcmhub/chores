@@ -41,7 +41,7 @@
     "postcss-preset-env": "^6.7.0"
   },
   "peerDependencies": {
-    "postcss": "^8.2.4"
+    "postcss": "^8.2.5"
   },
   "engines": {
     "node": ">=14.15.4"
