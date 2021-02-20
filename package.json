@@ -52,6 +52,7 @@
     "eslint": "eslint --cache --ext .js,.jsx,.mjs,.ts,.tsx,.html --format=pretty .",
     "eslint:fix": "yarn run eslint --fix",
     "lint": "run-s stylelint eslint prettier check:types check:size",
+    "lint-staged": "lint-staged",
     "lint:fix": "run-s stylelint:fix eslint:fix prettier:fix",
     "prettier": "prettier --check \"**/*.{json,css,scss,less,wxss,html,md,mdx}\"",
     "prettier:fix": "prettier --write \"**/*.{json,css,scss,less,wxss,html,md,mdx}\"",
@@ -63,7 +64,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "yarn lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
