@@ -53,14 +53,14 @@
     "eslint:fix": "yarn run eslint --fix",
     "lint": "run-s stylelint eslint prettier check:types check:size",
     "lint:fix": "run-s stylelint:fix eslint:fix prettier:fix",
+    "postinstall": "husky install",
     "prettier": "prettier --check \"**/*.{json,css,scss,less,wxss,html,md,mdx}\"",
     "prettier:fix": "prettier --write \"**/*.{json,css,scss,less,wxss,html,md,mdx}\"",
     "release": "lerna publish from-package",
     "start": "lerna run start",
     "stylelint": "stylelint --cache --aei \"**/*.{css,scss,less,wxss}\"",
     "stylelint:fix": "yarn run stylelint --fix",
-    "test": "lerna run test",
-    "postinstall": "husky install"
+    "test": "lerna run test"
   },
   "lint-staged": {
     "**/*.{css,scss,less,wxss}": "yarn run stylelint",
