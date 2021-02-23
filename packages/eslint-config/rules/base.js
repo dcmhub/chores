@@ -127,7 +127,17 @@ module.exports = {
           'App',
           'Behavior',
           'Component',
+          'Layouts',
+          'Markdown',
           'Page',
+          'Pages',
+          'ViteComponents',
+          'ViteIcons',
+          'ViteIconsResolver',
+          'WindiCSS',
+          'ViteI18n',
+          'VitePWA',
+          'Vue',
         ],
         capIsNewExceptionPattern: '^[A-Z]\\S*Service$',
       },
@@ -220,6 +230,9 @@ module.exports = {
           '**/.umirc.{js,ts}', // umi.js config
           '**/.umirc.*.{js,ts}', // umi.js config
           '**/config/*.{js,ts}', // umi.js config
+
+          '**/vite.config.{js,tx}', // vite config
+          '**/tailwind.config.{js,tx}', // tailwind config
         ],
       },
     ],

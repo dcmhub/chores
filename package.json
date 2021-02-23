@@ -53,7 +53,6 @@
     "eslint:fix": "yarn run eslint --fix",
     "lint": "run-s stylelint eslint prettier check:types check:size",
     "lint:fix": "run-s stylelint:fix eslint:fix prettier:fix",
-    "postinstall": "husky install",
     "prettier": "prettier --check \"**/*.{json,css,scss,less,wxss,html,md,mdx}\"",
     "prettier:fix": "prettier --write \"**/*.{json,css,scss,less,wxss,html,md,mdx}\"",
     "release": "lerna publish from-package",
@@ -91,7 +90,7 @@
   },
   "prettier": "@dcm/prettier-config",
   "dependencies": {
-    "@babel/runtime": "^7.13.2",
+    "@babel/runtime": "^7.13.4",
     "core-js": "^3.9.0"
   },
   "devDependencies": {
