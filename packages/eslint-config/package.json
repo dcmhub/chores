@@ -41,7 +41,9 @@
     "react.js",
     "rules",
     "ts-base.js",
-    "ts-react.js"
+    "ts-react.js",
+    "ts-vue.js",
+    "vue.js"
   ],
   "dependencies": {
     "@babel/eslint-parser": "^7.13.4",
