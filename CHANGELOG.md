@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.8](https://github.com/dcmhub/chores/compare/v2.5.7...v2.5.8) (2021-02-23)
+
+**Note:** Version bump only for package @dcm/chores
+
+
+
+
+
 ## [2.5.7](https://github.com/dcmhub/chores/compare/v2.5.5...v2.5.7) (2021-02-20)
 
 **Note:** Version bump only for package @dcm/chores

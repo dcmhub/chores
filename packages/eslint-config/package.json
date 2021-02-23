@@ -1,6 +1,6 @@
 {
   "name": "@dcm/eslint-config",
-  "version": "2.5.7",
+  "version": "2.5.8",
   "private": false,
   "description": "Shareable @eslint config of @dcmhub.",
   "keywords": [
@@ -46,7 +46,7 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.13.0",
     "@babel/eslint-plugin": "^7.13.0",
-    "@dcm/babel-preset": "^2.5.7",
+    "@dcm/babel-preset": "^2.5.8",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
     "eslint-config-airbnb": "^18.2.1",
