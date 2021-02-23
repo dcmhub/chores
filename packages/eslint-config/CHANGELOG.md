@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.11](https://github.com/dcmhub/chores/compare/v2.5.10...v2.5.11) (2021-02-23)
+
+
+### Bug Fixes
+
+* **eslint-config:** eslint vue config ([8189a9b](https://github.com/dcmhub/chores/commit/8189a9b120df17dc395eff20b572fdf8e618293e))
+
+
+
+
+
 ## [2.5.10](https://github.com/dcmhub/chores/compare/v2.5.9...v2.5.10) (2021-02-23)
 
 
