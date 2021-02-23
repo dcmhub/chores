@@ -1,10 +1,11 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
+  parser: 'vue-eslint-parser',
 
   parserOptions: {
     lib: ['esnext'],
     ecmaVersion: 2021,
     sourceType: 'module',
+    parser: '@typescript-eslint/parser',
     project: ['./tsconfig.json', './packages/*/tsconfig.json'],
     tsconfigRootDir: undefined,
     warnOnUnsupportedTypeScriptVersion: true,

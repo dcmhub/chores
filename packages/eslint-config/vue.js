@@ -1,9 +1,10 @@
 module.exports = {
-  parser: '@babel/eslint-parser',
+  parser: 'vue-eslint-parser',
 
   parserOptions: {
     ecmaVersion: 2021,
     sourceType: 'module',
+    parser: '@babel/eslint-parser',
     requireConfigFile: false,
     allowImportExportEverywhere: false,
     extraFileExtensions: ['.vue'],
