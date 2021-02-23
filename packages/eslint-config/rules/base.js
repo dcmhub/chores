@@ -2,7 +2,7 @@ const { rules: baseBestPracticesRules } = require('eslint-config-airbnb-base/rul
 const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style');
 const { rules: baseVariablesRules } = require('eslint-config-airbnb-base/rules/variables');
 
-const extensions = ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts', '.json'];
+const extensions = ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts', '.vue', '.json'];
 
 module.exports = {
   extends: [
@@ -137,6 +137,7 @@ module.exports = {
           'WindiCSS',
           'ViteI18n',
           'VitePWA',
+          'ViteSSG',
           'Vue',
         ],
         capIsNewExceptionPattern: '^[A-Z]\\S*Service$',
@@ -193,9 +194,9 @@ module.exports = {
           '**/setupTests.{js,ts}', // setup tests
           '**/{tests,__tests__}/**', // test folders
           '**/{mocks,__mocks__}/**', // mock folers
-          'test.{js,ts,jsx,tsx}', // repos with a single test file
-          'test-*.{js,ts,jsx,tsx}', // repos with multiple top-level test files
-          '**/*{.,_}{test,mock,spec}.{js,ts,jsx,tsx}', // test and mock files
+          'test.{js,ts,jsx,tsx,vue}', // repos with a single test file
+          'test-*.{js,ts,jsx,tsx,vue}', // repos with multiple top-level test files
+          '**/*{.,_}{test,mock,spec}.{js,ts,jsx,tsx,vue}', // test and mock files
 
           '**/jest.config.{js,ts}', // jest config
           '**/jest.setup.{js,ts}', // jest setup
@@ -231,8 +232,8 @@ module.exports = {
           '**/.umirc.*.{js,ts}', // umi.js config
           '**/config/*.{js,ts}', // umi.js config
 
-          '**/vite.config.{js,tx}', // vite config
-          '**/tailwind.config.{js,tx}', // tailwind config
+          '**/vite.config.{js,ts}', // vite config
+          '**/tailwind.config.{js,ts}', // tailwind config
         ],
       },
     ],
@@ -292,8 +293,8 @@ module.exports = {
     'import/extensions': extensions,
     'import/internal-regex': /^@(dcm|easynm|chenfeng)?\//,
     'import/parsers': {
-      '@babel/eslint-parser': ['.js', '.jsx', '.mjs'],
-      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
+      '@babel/eslint-parser': ['.js', '.jsx', '.mjs', '.vue'],
+      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts', '.vue'],
     },
     'import/resolver': {
       node: {
