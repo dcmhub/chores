@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.12](https://github.com/dcmhub/chores/compare/v2.5.11...v2.5.12) (2021-02-23)
+
+
+### Bug Fixes
+
+* **eslint-config:** add vue as extension ([b5837b6](https://github.com/dcmhub/chores/commit/b5837b66d86e5d0a3d0a90a329a88aa8b4c72cf2))
+
+
+
+
+
 ## [2.5.11](https://github.com/dcmhub/chores/compare/v2.5.10...v2.5.11) (2021-02-23)
 
 
