@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.10](https://github.com/dcmhub/chores/compare/v2.5.9...v2.5.10) (2021-02-23)
+
+
+### Bug Fixes
+
+* **eslint-config:** add vue.js and ts-vue.js to package.json files field ([0463bfc](https://github.com/dcmhub/chores/commit/0463bfcfb4c5d736a6bb964c5f1de9c29ad57fae))
+
+
+
+
+
 ## [2.5.9](https://github.com/dcmhub/chores/compare/v2.5.8...v2.5.9) (2021-02-23)
 
 
