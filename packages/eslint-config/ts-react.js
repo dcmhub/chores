@@ -23,9 +23,6 @@ module.exports = {
     require.resolve('./rules/typescript.js'),
 
     'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
-    'prettier/react',
-    'prettier/unicorn',
   ],
 
   settings: {

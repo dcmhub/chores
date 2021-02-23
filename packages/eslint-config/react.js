@@ -32,8 +32,5 @@ module.exports = {
     require.resolve('./rules/react.js'),
 
     'plugin:prettier/recommended',
-    'prettier/babel',
-    'prettier/react',
-    'prettier/unicorn',
   ],
 };

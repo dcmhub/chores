@@ -29,7 +29,5 @@ module.exports = {
     require.resolve('./rules/babel.js'),
 
     'plugin:prettier/recommended',
-    'prettier/babel',
-    'prettier/unicorn',
   ],
 };
