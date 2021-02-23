@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.9](https://github.com/dcmhub/chores/compare/v2.5.8...v2.5.9) (2021-02-23)
+
+
+### Features
+
+* **eslint-config:** add eslint config for vue ([2c4bb80](https://github.com/dcmhub/chores/commit/2c4bb809b48d37a9351961d5b679fadd9ebabe21))
+
+
+
+
+
 ## [2.5.8](https://github.com/dcmhub/chores/compare/v2.5.7...v2.5.8) (2021-02-23)
 
 **Note:** Version bump only for package @dcm/chores
