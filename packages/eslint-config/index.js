@@ -36,15 +36,8 @@ module.exports = {
       extends: [require.resolve('./vue.js')],
     },
     {
-      // Turn off some rules for '.d.ts' files
-      files: ['**/*.d.ts'],
-      rules: {
-        '@typescript-eslint/no-misused-new': 'off',
-      },
-    },
-    {
       // Turn off prettier/prettier rule for generated CSS '.d.ts' files
-      files: ['**/*.css.d.ts', '**/*.scss.d.ts', '**/*.sass.d.ts', '**/*.less.d.ts'],
+      files: ['**/*.css.d.ts', '**/*.scss.d.ts', '**/*.less.d.ts'],
       rules: {
         'prettier/prettier': 'off',
       },
