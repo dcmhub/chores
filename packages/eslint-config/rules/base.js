@@ -134,11 +134,11 @@ module.exports = {
           'ViteComponents',
           'ViteIcons',
           'ViteIconsResolver',
-          'WindiCSS',
-          'ViteI18n',
           'VitePWA',
           'ViteSSG',
           'Vue',
+          'VueI18n',
+          'WindiCSS',
         ],
         capIsNewExceptionPattern: '^[A-Z]\\S*Service$',
       },
@@ -265,7 +265,7 @@ module.exports = {
             position: 'after',
           },
           {
-            pattern: '@+(dcm|easynm|chenfeng)/**',
+            pattern: '@+(dcm|jsdcm|dcmhub|easynm|pubean|fastcms|laozhu)/**',
             group: 'internal',
             position: 'after',
           },
@@ -291,7 +291,7 @@ module.exports = {
 
     // Settings for eslint import plugin
     'import/extensions': extensions,
-    'import/internal-regex': /^@(dcm|easynm|chenfeng)?\//,
+    'import/internal-regex': /^@(dcm|jsdcm|dcmhub|easynm|pubean|fastcms|laozhu)?\//,
     'import/parsers': {
       '@babel/eslint-parser': ['.js', '.jsx', '.mjs', '.vue'],
       '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts', '.vue'],

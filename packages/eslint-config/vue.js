@@ -26,12 +26,14 @@ module.exports = {
   },
 
   extends: [
-    'airbnb',
+    'plugin:react/recommended',
 
     require.resolve('./rules/base.js'),
     require.resolve('./rules/babel.js'),
     require.resolve('./rules/vue.js'),
-
-    'plugin:prettier/recommended',
   ],
+
+  rules: {
+    'no-unused-vars': 'off',
+  },
 };

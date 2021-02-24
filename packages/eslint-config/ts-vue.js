@@ -18,14 +18,16 @@ module.exports = {
   },
 
   extends: [
-    'airbnb',
+    'plugin:react/recommended',
 
     require.resolve('./rules/base.js'),
-    require.resolve('./rules/vue.js'),
     require.resolve('./rules/typescript.js'),
-
-    'plugin:prettier/recommended',
+    require.resolve('./rules/vue.js'),
   ],
+
+  rules: {
+    '@typescript-eslint/no-unused-vars': 'off',
+  },
 
   settings: {
     'import/resolver': {
