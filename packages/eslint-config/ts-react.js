@@ -10,7 +10,6 @@ module.exports = {
     warnOnUnsupportedTypeScriptVersion: true,
     ecmaFeatures: {
       jsx: true,
-      impliedStrict: true,
       globalReturn: false,
     },
   },

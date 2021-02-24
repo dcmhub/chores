@@ -2,38 +2,45 @@ module.exports = {
   parser: 'vue-eslint-parser',
 
   parserOptions: {
+    lib: ['esnext'],
     ecmaVersion: 2021,
     sourceType: 'module',
-    parser: '@babel/eslint-parser',
-    requireConfigFile: false,
-    allowImportExportEverywhere: false,
+    parser: '@typescript-eslint/parser',
+    project: ['./tsconfig.json', './packages/*/tsconfig.json'],
+    tsconfigRootDir: undefined,
+    warnOnUnsupportedTypeScriptVersion: true,
     extraFileExtensions: ['.vue'],
     ecmaFeatures: {
       jsx: true,
-      impliedStrict: true,
       globalReturn: false,
-    },
-    babelOptions: {
-      presets: [
-        [
-          '@dcm/babel-preset',
-          {
-            alias: true,
-          },
-        ],
-      ],
     },
   },
 
   extends: [
-    'plugin:react/recommended',
+    'plugin:vue/vue3-essential',
 
+    '@vue/airbnb',
     require.resolve('./rules/base.js'),
-    require.resolve('./rules/babel.js'),
-    require.resolve('./rules/vue.js'),
+
+    '@vue/typescript/recommended',
+    require.resolve('./rules/typescript.js'),
+
+    '@vue/prettier',
+    '@vue/prettier/@typescript-eslint',
   ],
 
   rules: {
     'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+  },
+
+  plugins: ['vue'],
+
+  settings: {
+    'import/resolver': {
+      typescript: {
+        project: ['./tsconfig.json', './packages/*/tsconfig.json'],
+      },
+    },
   },
 };

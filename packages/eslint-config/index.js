@@ -33,7 +33,7 @@ module.exports = {
     {
       // Lint vue files
       files: ['**/*.vue'],
-      extends: [require.resolve('./ts-vue.js')],
+      extends: [require.resolve('./vue.js')],
     },
     {
       // Turn off some rules for '.d.ts' files

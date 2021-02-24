@@ -43,36 +43,35 @@ module.exports = {
   },
 
   rules: {
+    // Turn off some eslint rules
     'global-require': 'off',
     'no-bitwise': 'off',
-    'no-unsafe-finally': 'off',
     'no-restricted-syntax': 'off',
 
-    // Disallow parameter object manipulation except for specific exclusions
-    'no-param-reassign': [
+    // Turn off some promise rules
+    'promise/always-return': 'off',
+
+    // Turn off some unicorn rules
+    'unicorn/filename-case': 'off',
+    'unicorn/no-array-callback-reference': 'off',
+    'unicorn/no-array-reduce': 'off',
+    'unicorn/no-null': 'off',
+    'unicorn/no-useless-undefined': 'off',
+    'unicorn/prefer-spread': 'off',
+    'unicorn/prevent-abbreviations': 'off',
+
+    // Turn off some import rules
+    'import/extensions': 'off',
+    'import/no-cycle': 'off',
+    'import/no-default-export': 'off',
+    'import/prefer-default-export': 'off',
+
+    // Allow implicit return, check forEach with return value
+    'array-callback-return': [
       'error',
       {
-        props: true,
-        ignorePropertyModificationsFor: [
-          ...baseBestPracticesRules['no-param-reassign'][1].ignorePropertyModificationsFor,
-
-          // You can add new exclusions here
-          'v', // for map or filter value shortcut
-          'value', // for map or filter value
-          'r', // for table record shortcut
-          'record', // for table record
-          'draft', // for immer draft
-          'model', // for vtk.js
-          'publicAPI', // for vtk.js
-        ],
-      },
-    ],
-
-    // Allow console.warn and console.error
-    'no-console': [
-      'warn',
-      {
-        allow: ['warn', 'error'],
+        allowImplicit: true,
+        checkForEach: true,
       },
     ],
 
@@ -82,36 +81,13 @@ module.exports = {
       {
         properties: 'never',
         ignoreDestructuring: true,
+        ignoreImports: true,
+        ignoreGlobals: true,
+        allow: [],
       },
     ],
 
-    // Allow empty catch
-    'no-empty': [
-      'error',
-      {
-        allowEmptyCatch: true,
-      },
-    ],
-
-    // Unused variables rule
-    'no-unused-vars': [
-      'error',
-      {
-        ...baseVariablesRules['no-unused-vars'][1],
-        varsIgnorePattern: '^[A-Z_]',
-        argsIgnorePattern: '^_',
-      },
-    ],
-
-    // Allow some global variables
-    'no-underscore-dangle': [
-      'error',
-      {
-        allow: ['__VERSION__', '__BUILD_TIME__', '__COS_DOMAIN__', '__COS_DICOM_DOMAIN__'],
-      },
-    ],
-
-    // Exceptions for wechat miniprogram
+    // Exceptions for wechat miniprogram and vue.js
     'new-cap': [
       'error',
       {
@@ -144,6 +120,60 @@ module.exports = {
       },
     ],
 
+    // Allow console.warn and console.error
+    'no-console': [
+      'warn',
+      {
+        allow: ['warn', 'error'],
+      },
+    ],
+
+    // Allow empty catch
+    'no-empty': [
+      'error',
+      {
+        allowEmptyCatch: true,
+      },
+    ],
+
+    // Disallow parameter object manipulation except for specific exclusions
+    'no-param-reassign': [
+      'error',
+      {
+        props: true,
+        ignorePropertyModificationsFor: [
+          ...baseBestPracticesRules['no-param-reassign'][1].ignorePropertyModificationsFor,
+
+          // You can add new exclusions here
+          'value', // for map or filter value
+          'record', // for table record
+          'draft', // for immer draft
+          'model', // for vtk.js
+          'publicAPI', // for vtk.js
+        ],
+      },
+    ],
+
+    // Allow some global variables
+    'no-underscore-dangle': [
+      'error',
+      {
+        allow: ['__VERSION__', '__BUILD_TIME__', '__COS_DOMAIN__', '__COS_DICOM_DOMAIN__'],
+        allowAfterThis: true,
+        allowAfterSuper: true,
+      },
+    ],
+
+    // Unused variables rule
+    'no-unused-vars': [
+      'error',
+      {
+        ...baseVariablesRules['no-unused-vars'][1],
+        varsIgnorePattern: '^_',
+        argsIgnorePattern: '^_',
+      },
+    ],
+
     // Allow short circuit and ternary expressions
     'no-unused-expressions': [
       'error',
@@ -151,37 +181,9 @@ module.exports = {
         allowShortCircuit: true,
         allowTernary: true,
         allowTaggedTemplates: false,
+        enforceForJSX: true,
       },
     ],
-
-    // Allow implicit return
-    'array-callback-return': [
-      'error',
-      {
-        allowImplicit: true,
-      },
-    ],
-
-    // Turn off some promise rules
-    'promise/always-return': 'off',
-
-    // Turn off some jsdoc rule
-    'jsdoc/no-undefined-types': 'off',
-
-    // Turn off some unicorn rules
-    'unicorn/filename-case': 'off',
-    'unicorn/no-array-callback-reference': 'off',
-    'unicorn/no-array-reduce': 'off',
-    'unicorn/no-null': 'off',
-    'unicorn/no-useless-undefined': 'off',
-    'unicorn/prefer-spread': 'off',
-    'unicorn/prevent-abbreviations': 'off',
-
-    // Turn off some import rules
-    'import/extensions': 'off',
-    'import/no-cycle': 'off',
-    'import/no-default-export': 'off',
-    'import/prefer-default-export': 'off',
 
     // Ignore extraneous dependencies in build tools
     'import/no-extraneous-dependencies': [
@@ -275,7 +277,7 @@ module.exports = {
             position: 'after',
           },
           {
-            pattern: './**/*.+(css|scss|sass|less|png|jpg|jpeg|gif|svg|webp|avif|tiff|bmp|mp3|mp4)',
+            pattern: './**/*.+(css|scss|less|png|jpg|jpeg|gif|svg|webp|avif|tiff|mp3|mp4|dcm)',
             group: 'unknown',
             position: 'before',
           },
@@ -293,8 +295,8 @@ module.exports = {
     'import/extensions': extensions,
     'import/internal-regex': /^@(dcm|jsdcm|dcmhub|easynm|pubean|fastcms|laozhu)?\//,
     'import/parsers': {
-      '@babel/eslint-parser': ['.js', '.jsx', '.mjs', '.vue'],
-      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts', '.vue'],
+      '@babel/eslint-parser': ['.js', '.jsx', '.mjs'],
+      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
     },
     'import/resolver': {
       node: {

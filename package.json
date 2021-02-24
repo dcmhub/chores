@@ -1,4 +1,5 @@
 {
+  "$schema": "https://schema.easynm.cn/package.json",
   "name": "@dcm/chores",
   "version": "1.0.0",
   "private": true,
@@ -90,7 +91,7 @@
   },
   "prettier": "@dcm/prettier-config",
   "dependencies": {
-    "@babel/runtime": "^7.13.6",
+    "@babel/runtime": "^7.13.7",
     "core-js": "^3.9.0"
   },
   "devDependencies": {

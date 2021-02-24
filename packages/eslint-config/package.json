@@ -1,4 +1,5 @@
 {
+  "$schema": "https://schema.easynm.cn/package.json",
   "name": "@dcm/eslint-config",
   "version": "2.5.14",
   "private": false,
@@ -42,7 +43,6 @@
     "rules",
     "ts-base.js",
     "ts-react.js",
-    "ts-vue.js",
     "vue.js"
   ],
   "dependencies": {
@@ -51,6 +51,9 @@
     "@dcm/babel-preset": "^2.5.14",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
+    "@vue/eslint-config-airbnb": "^5.3.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.0.0",

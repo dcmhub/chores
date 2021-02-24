@@ -1,4 +1,5 @@
 {
+  "$schema": "https://schema.easynm.cn/package.json",
   "name": "@dcm/prettier-config",
   "version": "2.5.7",
   "private": false,

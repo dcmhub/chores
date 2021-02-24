@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/stylelintrc",
+  "$schema": "https://schema.easynm.cn/stylelintrc.json",
   "extends": ["@dcm/stylelint-config"],
   "rules": {
     "plugin/no-unsupported-browser-features": [

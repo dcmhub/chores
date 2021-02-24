@@ -1,8 +1,8 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
+  "$schema": "https://schema.easynm.cn/tsconfig.json",
   "extends": "@dcm/tsconfig",
   "files": [],
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.vue"],
   "exclude": [".next", ".umi", ".umi-production", "build", "dist", "node_modules", "out", "public"],
   "compilerOptions": {
     "types": ["express", "node", "react", "react-dom", "webpack-env"]

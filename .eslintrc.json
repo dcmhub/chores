@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/eslintrc",
+  "$schema": "https://schema.easynm.cn/eslintrc.json",
   "root": true,
   "extends": "@dcm/eslint-config/base",
   "settings": {

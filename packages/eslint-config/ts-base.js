@@ -9,7 +9,6 @@ module.exports = {
     tsconfigRootDir: undefined,
     warnOnUnsupportedTypeScriptVersion: true,
     ecmaFeatures: {
-      impliedStrict: true,
       globalReturn: false,
     },
   },
