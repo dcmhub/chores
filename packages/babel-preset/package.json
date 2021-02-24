@@ -53,7 +53,7 @@
     "@babel/plugin-syntax-top-level-await": "^7.12.13",
     "@babel/plugin-transform-react-constant-elements": "^7.12.13",
     "@babel/plugin-transform-react-inline-elements": "^7.12.13",
-    "@babel/plugin-transform-runtime": "^7.13.5",
+    "@babel/plugin-transform-runtime": "^7.13.6",
     "@babel/preset-env": "^7.13.5",
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.13.0",
@@ -66,7 +66,7 @@
   },
   "peerDependencies": {
     "@babel/core": "^7.13.1",
-    "@babel/runtime": "^7.13.4",
+    "@babel/runtime": "^7.13.6",
     "core-js": "^3.9.0"
   },
   "engines": {
