@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.easynm.cn/package.json",
   "name": "@dcm/eslint-config",
-  "version": "2.5.14",
+  "version": "2.5.15",
   "private": false,
   "description": "Shareable @eslint config of @dcmhub.",
   "keywords": [
@@ -48,7 +48,7 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.13.4",
     "@babel/eslint-plugin": "^7.13.0",
-    "@dcm/babel-preset": "^2.5.14",
+    "@dcm/babel-preset": "^2.5.15",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
     "@vue/eslint-config-airbnb": "^5.3.0",
