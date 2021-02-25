@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.easynm.cn/package.json",
   "name": "@dcm/eslint-config",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "private": false,
   "description": "Shareable @eslint config of @dcmhub.",
   "keywords": [
