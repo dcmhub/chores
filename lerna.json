@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.easynm.cn/lerna.json",
-  "version": "2.6.4",
+  "version": "2.6.5",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "packages": ["packages/*"],
