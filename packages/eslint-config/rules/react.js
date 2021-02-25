@@ -1,13 +1,12 @@
 module.exports = {
-  extends: ['plugin:jest/recommended'],
-
-  plugins: ['react-hooks'],
-
   env: {
     jest: true,
   },
 
+  extends: ['plugin:jest/recommended'],
+
   rules: {
+    // Turn off some over-strict eslint rules
     'react/forbid-prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-uses-react': 'off',
@@ -15,7 +14,6 @@ module.exports = {
     'react/no-danger': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/sort-comp': 'warn',
     'react/state-in-constructor': 'off',
 
     // JSX filename extensioins
@@ -65,6 +63,8 @@ module.exports = {
       },
     ],
   },
+
+  plugins: ['react-hooks'],
 
   settings: {
     react: {

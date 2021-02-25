@@ -18,8 +18,9 @@ module.exports = {
     'airbnb',
 
     require.resolve('./rules/base.js'),
-    require.resolve('./rules/react.js'),
     require.resolve('./rules/typescript.js'),
+    require.resolve('./rules/react.js'),
+    require.resolve('./rules/tsdoc.js'),
 
     'plugin:prettier/recommended',
   ],

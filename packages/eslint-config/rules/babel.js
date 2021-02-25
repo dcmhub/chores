@@ -4,7 +4,28 @@ const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style
 const { rules: baseUserRules } = require('./base');
 
 module.exports = {
-  plugins: ['@babel'],
+  parser: '@babel/eslint-parser',
+
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: 'module',
+    requireConfigFile: false,
+    allowImportExportEverywhere: false,
+    ecmaFeatures: {
+      impliedStrict: true,
+      globalReturn: false,
+    },
+    babelOptions: {
+      presets: [
+        [
+          '@dcm/babel-preset',
+          {
+            alias: true,
+          },
+        ],
+      ],
+    },
+  },
 
   rules: {
     'no-invalid-this': 'off',
@@ -19,6 +40,8 @@ module.exports = {
     '@babel/new-cap': baseUserRules['new-cap'],
     '@babel/no-unused-expressions': baseUserRules['no-unused-expressions'],
   },
+
+  plugins: ['@babel'],
 
   settings: {
     'import/resolver': {

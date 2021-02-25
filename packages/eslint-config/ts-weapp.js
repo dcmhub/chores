@@ -1,15 +1,13 @@
 module.exports = {
-  parser: 'vue-eslint-parser',
+  parser: '@typescript-eslint/parser',
 
   parserOptions: {
     lib: ['esnext'],
     ecmaVersion: 2021,
     sourceType: 'module',
-    parser: '@typescript-eslint/parser',
     project: ['./tsconfig.json', './packages/*/tsconfig.json'],
     tsconfigRootDir: undefined,
     warnOnUnsupportedTypeScriptVersion: true,
-    extraFileExtensions: ['.vue'],
     ecmaFeatures: {
       globalReturn: false,
     },
@@ -17,16 +15,20 @@ module.exports = {
 
   extends: [
     'airbnb-base',
-    'plugin:vue/vue3-recommended',
 
     require.resolve('./rules/base.js'),
     require.resolve('./rules/typescript.js'),
+    require.resolve('./rules/weapp.js'),
+    require.resolve('./rules/tsdoc.js'),
+
+    'plugin:prettier/recommended',
   ],
 
-  rules: {
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
+  settings: {
+    'import/resolver': {
+      typescript: {
+        project: ['./tsconfig.json', './packages/*/tsconfig.json'],
+      },
+    },
   },
-
-  plugins: ['vue'],
 };

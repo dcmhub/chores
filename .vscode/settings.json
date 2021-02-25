@@ -1,0 +1,12 @@
+{
+  "eslint.workingDirectories": [
+    "./packages/babel-preset",
+    "./packages/commitlint-config",
+    "./packages/eslint-config",
+    "./packages/postcss-config",
+    "./packages/prettier-config",
+    "./packages/stylelint-config",
+    "./packages/tsconfig",
+    "./packages/webpack-config"
+  ]
+}

@@ -33,10 +33,6 @@ lerna-debug.log*
 report.*.json
 *.cpuprofile
 
-# lock files
-yarn.lock
-package-lock.json
-
 # testing
 coverage
 

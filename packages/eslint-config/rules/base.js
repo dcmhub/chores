@@ -2,20 +2,17 @@ const { rules: baseBestPracticesRules } = require('eslint-config-airbnb-base/rul
 const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style');
 const { rules: baseVariablesRules } = require('eslint-config-airbnb-base/rules/variables');
 
-const extensions = ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts', '.vue', '.json'];
+const extensions = ['.js', '.mjs', '.jsx', '.ts', '.d.ts', '.tsx', '.vue'];
 
 module.exports = {
   extends: [
+    'plugin:unicorn/recommended',
+    'plugin:promise/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'plugin:promise/recommended',
-    'plugin:unicorn/recommended',
-    'plugin:jsdoc/recommended',
     'plugin:eslint-comments/recommended',
     'plugin:compat/recommended',
   ],
-
-  plugins: ['import', 'html', 'sort-keys-fix'],
 
   env: {
     browser: true,
@@ -27,31 +24,19 @@ module.exports = {
 
   globals: {
     workbox: true,
-
-    // Global variables for wechat miniprogram
-    wx: true,
-    App: true,
-    Behavior: true,
-    Component: true,
-    Function: true,
-    Page: true,
-    Promise: true,
-    getApp: true,
-    getCurrentPages: true,
-    definePlugin: true,
-    requirePlugin: true,
   },
 
   rules: {
-    // Turn off some eslint rules
+    // Turn off some over-strict eslint rules
     'global-require': 'off',
+    'import/extensions': 'off',
     'no-bitwise': 'off',
     'no-restricted-syntax': 'off',
-
-    // Turn off some promise rules
     'promise/always-return': 'off',
-
-    // Turn off some unicorn rules
+    'sort-imports': 'off',
+    'import/first': 'off',
+    'import/no-default-export': 'off',
+    'import/prefer-default-export': 'off',
     'unicorn/filename-case': 'off',
     'unicorn/no-array-callback-reference': 'off',
     'unicorn/no-array-reduce': 'off',
@@ -60,11 +45,9 @@ module.exports = {
     'unicorn/prefer-spread': 'off',
     'unicorn/prevent-abbreviations': 'off',
 
-    // Turn off some import rules
-    'import/extensions': 'off',
-    'import/no-cycle': 'off',
-    'import/no-default-export': 'off',
-    'import/prefer-default-export': 'off',
+    // Add simple import sort rules
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
 
     // Allow implicit return, check forEach with return value
     'array-callback-return': [
@@ -87,19 +70,17 @@ module.exports = {
       },
     ],
 
-    // Exceptions for wechat miniprogram and vue.js
+    // Add exceptions for wechat miniprogram and vue.js
     'new-cap': [
       'error',
       {
         newIsCap: true,
+        newIsCapExceptions: [...baseStyleRules['new-cap'][1].newIsCapExceptions],
+
         capIsNew: true,
-        newIsCapExceptions: [
-          ...baseStyleRules['new-cap'][1].newIsCapExceptions,
-          // You can add new exceptions here
-        ],
         capIsNewExceptions: [
           ...baseStyleRules['new-cap'][1].capIsNewExceptions,
-          // You can add new exceptions here
+
           'App',
           'Behavior',
           'Component',
@@ -145,11 +126,11 @@ module.exports = {
           ...baseBestPracticesRules['no-param-reassign'][1].ignorePropertyModificationsFor,
 
           // You can add new exclusions here
-          'value', // for map or filter value
-          'record', // for table record
-          'draft', // for immer draft
-          'model', // for vtk.js
-          'publicAPI', // for vtk.js
+          'value', // For map or filter value
+          'record', // For table record
+          'draft', // For immer draft
+          'model', // For vtk.js inheritance
+          'publicAPI', // For vtk.js inheritance
         ],
       },
     ],
@@ -191,122 +172,58 @@ module.exports = {
       {
         optionalDependencies: false,
         devDependencies: [
+          '**/bin/**', // bin folders
+          '**/config/**', // config folders
+          '**/configs/**', // config folders
           '**/scripts/**', // script folders
-
           '**/setupTests.{js,ts}', // setup tests
           '**/{tests,__tests__}/**', // test folders
           '**/{mocks,__mocks__}/**', // mock folers
-          'test.{js,ts,jsx,tsx,vue}', // repos with a single test file
-          'test-*.{js,ts,jsx,tsx,vue}', // repos with multiple top-level test files
-          '**/*{.,_}{test,mock,spec}.{js,ts,jsx,tsx,vue}', // test and mock files
-
+          'test.{js,mjs,ts,jsx,tsx,vue}', // repos with a single test file
+          'test-*.{js,ts,mjs,jsx,tsx,vue}', // repos with multiple top-level test files
+          '**/*{.,_}{test,mock,spec}.{js,mjs,ts,jsx,tsx,vue}', // test and mock files
           '**/jest.config.{js,ts}', // jest config
           '**/jest.setup.{js,ts}', // jest setup
           '**/jest-puppeteer.config.{js,ts}', // jest puppeteer config
-
-          '**/vue.config.{js,ts}', // vue-cli config
-
           '**/.webpack/*.{js,ts}', // webpack config
           '**/webpack.config.{js,ts}', // webpack config
           '**/webpack.config.*.{js,ts}', // webpack config
-
           '**/rollup.config.{js,ts}', // rollup config
           '**/rollup.config.*.{js,ts}', // rollup config
-
           '**/babel.config.{js,ts}', // babel config
           '**/.babelrc.{js,ts}', // babel config
-
           '**/prettier.config.{js,ts}', // prettier config
           '**/.prettierrc.{js,ts}', // prettier config
-
           '**/.stylelintrc.{js,ts}', // stylelint config
           '**/stylelint.config.{js,ts}', // stylelint config
-
           '**/.eslintrc.{js,ts}', // eslint config
-
           '**/postcss.config.{js,ts}', // postcss config
           '**/.postcssrc.{js,ts}', // postcss config
-
+          '**/tailwind.config.{js,ts}', // tailwind config
           '**/next.config.{js,ts}', // next.js config
           '**/server.{js,ts}', // next.js server config
-
           '**/.umirc.{js,ts}', // umi.js config
           '**/.umirc.*.{js,ts}', // umi.js config
-          '**/config/*.{js,ts}', // umi.js config
-
+          '**/vue.config.{js,ts}', // vue-cli config
           '**/vite.config.{js,ts}', // vite config
-          '**/tailwind.config.{js,ts}', // tailwind config
         ],
-      },
-    ],
-
-    // Order the imports
-    'import/order': [
-      'warn',
-      {
-        'alphabetize': {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-        'groups': [
-          ['builtin'],
-          ['external', 'internal'],
-          ['parent', 'sibling', 'index'],
-          ['unknown'],
-        ],
-        'newlines-between': 'always',
-        'pathGroups': [
-          {
-            pattern: '+(ahooks|clsx|dayjs|lodash-es|react|react-dom|umi|umi-request)',
-            group: 'internal',
-            position: 'before',
-          },
-          {
-            pattern: '@+(ant-design|material-ui)/**',
-            group: 'internal',
-            position: 'after',
-          },
-          {
-            pattern: '@+(dcm|jsdcm|dcmhub|easynm|pubean|fastcms|laozhu)/**',
-            group: 'internal',
-            position: 'after',
-          },
-          {
-            pattern: '@/**',
-            group: 'internal',
-            position: 'after',
-          },
-          {
-            pattern: './**/*.+(css|scss|less|png|jpg|jpeg|gif|svg|webp|avif|tiff|mp3|mp4|dcm)',
-            group: 'unknown',
-            position: 'before',
-          },
-        ],
-        'pathGroupsExcludedImportTypes': ['umi'],
       },
     ],
   },
 
-  settings: {
-    // Settings for eslint html plugin
-    'html/html-extensions': ['.html', '.ejs'],
+  plugins: ['import', 'simple-import-sort', 'sort-keys-fix'],
 
+  settings: {
     // Settings for eslint import plugin
-    'import/extensions': extensions,
+    'import/extensions': [...extensions, '.json'],
     'import/internal-regex': /^@(dcm|jsdcm|dcmhub|easynm|pubean|fastcms|laozhu)?\//,
     'import/parsers': {
-      '@babel/eslint-parser': ['.js', '.jsx', '.mjs'],
-      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
+      '@babel/eslint-parser': extensions,
     },
     'import/resolver': {
       node: {
-        extensions,
+        extensions: [...extensions, '.json'],
       },
-    },
-
-    // Settings for eslint jsdoc plugin
-    'jsdoc': {
-      mode: 'jsdoc',
     },
 
     // Settings for eslint compat plugin

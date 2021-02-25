@@ -31,7 +31,7 @@ module.exports = {
       extends: [require.resolve('./ts-react.js')],
     },
     {
-      // Lint vue files
+      // Lint typescript vue files
       files: ['**/*.vue'],
       extends: [require.resolve('./vue.js')],
     },

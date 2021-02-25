@@ -113,7 +113,7 @@ module.exports = (
           ],
         },
         {
-          test: /\.(ico|gif|png|jpg|jpeg|bmp|tiff|webp|avif|mp3|mp4)$/,
+          test: /\.(ico|gif|png|jpg|jpeg|bmp|tiff|webp|avif|mp3|mp4|dcm)$/,
           use: [
             {
               loader: 'url-loader',

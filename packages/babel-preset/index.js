@@ -136,6 +136,7 @@ module.exports = declare((api, options = {}) => {
           '@/components': './src/components',
           '@/constants': './src/constants',
           '@/defaultSettings': './src/defaultSettings',
+          '@/globalState': './src/state.tsx',
           '@/interfaces': './src/interfaces',
           '@/layouts': './src/layouts',
           '@/locales': './src/locales',

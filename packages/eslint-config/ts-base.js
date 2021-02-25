@@ -18,6 +18,7 @@ module.exports = {
 
     require.resolve('./rules/base.js'),
     require.resolve('./rules/typescript.js'),
+    require.resolve('./rules/tsdoc.js'),
 
     'plugin:prettier/recommended',
   ],

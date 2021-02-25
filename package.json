@@ -50,7 +50,7 @@
     "commit": "git-cz",
     "commit:dirty": "yarn run commit --no-verify",
     "dev": "lerna run dev",
-    "eslint": "eslint --cache --ext .js,.jsx,.mjs,.ts,.tsx,.vue,.html --format=pretty .",
+    "eslint": "eslint --cache --ext .js,.jsx,.mjs,.ts,.tsx,.vue --format=pretty .",
     "eslint:fix": "yarn run eslint --fix",
     "lint": "run-s stylelint eslint prettier check:types check:size",
     "lint:fix": "run-s stylelint:fix eslint:fix prettier:fix",
@@ -64,7 +64,7 @@
   },
   "lint-staged": {
     "**/*.{css,scss,less,wxss}": "yarn run stylelint",
-    "**/*.{js,jsx,mjs,ts,tsx,vue,html}": "yarn run eslint",
+    "**/*.{js,jsx,mjs,ts,tsx,vue}": "yarn run eslint",
     "**/*.{json,css,scss,less,wxss,html,md,mdx}": "pretty-quick --staged"
   },
   "config": {
@@ -91,7 +91,7 @@
   },
   "prettier": "@dcm/prettier-config",
   "dependencies": {
-    "@babel/runtime": "^7.13.7",
+    "@babel/runtime": "^7.13.6",
     "core-js": "^3.9.0"
   },
   "devDependencies": {

@@ -12,6 +12,12 @@ const stylelintConfig = {
   ],
   rules: {
     'function-url-quotes': 'always',
+    'font-family-no-missing-generic-family-keyword': [
+      true,
+      {
+        ignoreFontFamilies: ['icon'],
+      },
+    ],
     'no-descending-specificity': null,
     'value-keyword-case': null,
 

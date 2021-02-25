@@ -30,6 +30,7 @@ module.exports = {
     require.resolve('./rules/base.js'),
     require.resolve('./rules/babel.js'),
     require.resolve('./rules/react.js'),
+    require.resolve('./rules/jsdoc.js'),
 
     'plugin:prettier/recommended',
   ],
