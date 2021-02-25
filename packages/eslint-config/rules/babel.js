@@ -4,29 +4,6 @@ const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style
 const { rules: baseUserRules } = require('./base');
 
 module.exports = {
-  parser: '@babel/eslint-parser',
-
-  parserOptions: {
-    ecmaVersion: 2021,
-    sourceType: 'module',
-    requireConfigFile: false,
-    allowImportExportEverywhere: false,
-    ecmaFeatures: {
-      impliedStrict: true,
-      globalReturn: false,
-    },
-    babelOptions: {
-      presets: [
-        [
-          '@dcm/babel-preset',
-          {
-            alias: true,
-          },
-        ],
-      ],
-    },
-  },
-
   rules: {
     'no-invalid-this': 'off',
     'object-curly-spacing': 'off',

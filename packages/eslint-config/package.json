@@ -48,6 +48,8 @@
     "weapp.js"
   ],
   "dependencies": {
+    "@babel/eslint-parser": "^7.13.4",
+    "@babel/eslint-plugin": "^7.13.0",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
     "eslint-config-airbnb": "^18.2.1",
@@ -75,8 +77,6 @@
   },
   "peerDependencies": {
     "@babel/core": "^7.13.1",
-    "@babel/eslint-parser": "^7.13.4",
-    "@babel/eslint-plugin": "^7.13.0",
     "@dcm/babel-preset": "^2.5.15",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.20.0",
