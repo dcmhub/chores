@@ -13,6 +13,8 @@ module.exports = {
     'plugin:import/typescript',
   ],
 
+  plugins: ['@typescript-eslint'],
+
   rules: {
     // Turn off some conflict eslint rules
     'import/default': 'off',
@@ -173,6 +175,4 @@ module.exports = {
       },
     ],
   },
-
-  plugins: ['@typescript-eslint'],
 };

@@ -2,7 +2,7 @@ const { rules: baseBestPracticesRules } = require('eslint-config-airbnb-base/rul
 const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style');
 const { rules: baseVariablesRules } = require('eslint-config-airbnb-base/rules/variables');
 
-const extensions = ['.js', '.mjs', '.jsx', '.ts', '.d.ts', '.tsx', '.vue'];
+const extensions = ['.js', '.mjs', '.jsx', '.ts', '.d.ts', '.tsx', '.vue', '.json'];
 
 module.exports = {
   extends: [
@@ -25,6 +25,8 @@ module.exports = {
   globals: {
     workbox: true,
   },
+
+  plugins: ['import', 'simple-import-sort', 'sort-keys-fix'],
 
   rules: {
     // Turn off some over-strict eslint rules
@@ -211,18 +213,17 @@ module.exports = {
     ],
   },
 
-  plugins: ['import', 'simple-import-sort', 'sort-keys-fix'],
-
   settings: {
     // Settings for eslint import plugin
-    'import/extensions': [...extensions, '.json'],
+    'import/extensions': extensions,
     'import/internal-regex': /^@(dcm|jsdcm|dcmhub|easynm|pubean|fastcms|laozhu)?\//,
     'import/parsers': {
-      '@babel/eslint-parser': extensions,
+      '@babel/eslint-parser': ['.js', '.mjs', '.jsx'],
+      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
     },
     'import/resolver': {
       node: {
-        extensions: [...extensions, '.json'],
+        extensions,
       },
     },
 

@@ -5,6 +5,8 @@ module.exports = {
 
   extends: ['plugin:jest/recommended'],
 
+  plugins: ['react-hooks'],
+
   rules: {
     // Turn off some over-strict eslint rules
     'react/forbid-prop-types': 'off',
@@ -63,8 +65,6 @@ module.exports = {
       },
     ],
   },
-
-  plugins: ['react-hooks'],
 
   settings: {
     react: {

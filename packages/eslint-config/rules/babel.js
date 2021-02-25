@@ -4,6 +4,8 @@ const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style
 const { rules: baseUserRules } = require('./base');
 
 module.exports = {
+  plugins: ['@babel'],
+
   rules: {
     'no-invalid-this': 'off',
     'object-curly-spacing': 'off',
@@ -17,8 +19,6 @@ module.exports = {
     '@babel/new-cap': baseUserRules['new-cap'],
     '@babel/no-unused-expressions': baseUserRules['no-unused-expressions'],
   },
-
-  plugins: ['@babel'],
 
   settings: {
     'import/resolver': {
