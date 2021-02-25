@@ -41,7 +41,6 @@
     "index.js",
     "react.js",
     "rules",
-    "taro.js",
     "ts-base.js",
     "ts-react.js",
     "ts-weapp.js",
