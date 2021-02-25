@@ -31,9 +31,11 @@ module.exports = {
       extends: [require.resolve('./ts-react.js')],
     },
     {
-      // Lint typescript vue files
-      files: ['**/*.vue'],
-      extends: [require.resolve('./vue.js')],
+      // Turn off some rules for '.d.ts' files
+      files: ['**/*.d.ts'],
+      rules: {
+        '@typescript-eslint/no-misused-new': 'off',
+      },
     },
     {
       // Turn off prettier/prettier rule for generated CSS '.d.ts' files

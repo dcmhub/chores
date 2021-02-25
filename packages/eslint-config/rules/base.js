@@ -34,6 +34,7 @@ module.exports = {
     'import/extensions': 'off',
     'no-bitwise': 'off',
     'no-restricted-syntax': 'off',
+    'no-unsafe-finally': 'off',
     'promise/always-return': 'off',
     'sort-imports': 'off',
     'import/first': 'off',

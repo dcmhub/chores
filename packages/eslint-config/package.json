@@ -1,5 +1,4 @@
 {
-  "$schema": "https://schema.easynm.cn/package.json",
   "name": "@dcm/eslint-config",
   "version": "2.6.5",
   "private": false,
@@ -37,15 +36,14 @@
   ],
   "main": "index.js",
   "files": [
-    "base.js",
     "index.js",
+    "base.js",
     "react.js",
-    "rules",
     "ts-base.js",
     "ts-react.js",
-    "ts-weapp.js",
     "vue.js",
-    "weapp.js"
+    "weapp.js",
+    "rules"
   ],
   "dependencies": {
     "@babel/eslint-parser": "^7.13.4",
